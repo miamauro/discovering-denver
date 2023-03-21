@@ -1,1 +1,3 @@
-# discovering-denver
+# Discovering Denver
+
+## Description
