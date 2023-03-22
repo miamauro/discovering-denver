@@ -4,3 +4,4 @@ package-lock.json
 .DS_Store
 .env
 GH-test.html
+locations.html

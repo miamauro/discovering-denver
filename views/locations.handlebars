@@ -1,0 +1,39 @@
+<div class="container-fluid text-center bg-primary p-0 location-header">
+  <img src="../public/images/{{placehoder-location}}" class="img-fluid" alt="..." />
+</div>
+<div class="d-flex justify-content-end">
+  <a href="{{add-review-url}}" class="btn btn-primary">Rate experience</a>
+</div>
+
+<div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
+  <div class="col-md-10">
+    <h3>{{location-title}}</h3>
+    <p>
+      {{location-description}}
+    </p>
+    <p>Location: <span>{{location-location}}</span></p>
+  </div>
+  <div class="col-md-2">
+    <div class="bg-primary">
+      <h4 class="rating text-light">4.5</h4>
+    </div>
+  </div>
+</div>
+<div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
+  <div class="col-md-2 text-end">
+    <img
+      src="../public/images/{{placehoder-user}}"
+      class="rounded-circle w-50"
+    />
+  </div>
+  <div class="col-md-8">
+    <h3>{{user-name}}</h3>
+    <p>
+      {{user-review}}
+    </p>
+  </div>
+  <div class="col-md-2 d-flex">
+    <h4>{{user-rating}}</h4>
+    ⭐
+  </div>
+</div>
