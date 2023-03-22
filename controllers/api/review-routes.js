@@ -50,4 +50,17 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const reviewData = await Review.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(reviewData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
