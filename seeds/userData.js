@@ -1,30 +1,25 @@
-const { User } = require("../models/index");
+const { User } = require("../models");
 
 const userData = [
   {
-    username: "Mia",
-    email: "user1@email.com",
-    password: "testPassword",
+    username: "climbingcameron",
+    email: "cameron@aol.com",
+    password: "luv2climb",
   },
   {
-    username: "George",
-    email: "user2@email.com",
-    password: "testPassword",
+    username: "foodie4life",
+    email: "sallysmith@aol.com",
+    password: "foodie4ever",
   },
   {
-    username: "James",
-    email: "user3@email.com",
-    password: "testPassword",
+    username: "rockiefan91",
+    email: "gilmore@aol.com",
+    password: "baseballfan",
   },
   {
-    username: "Francisco",
-    email: "user4@email.com",
-    password: "testPassword",
-  },
-  {
-    username: "Thomas",
-    email: "test5@email.com",
-    password: "testPassword",
+    username: "greenthumbgary",
+    email: "plantlover@aol.com",
+    password: "garden87",
   },
 ];
 
