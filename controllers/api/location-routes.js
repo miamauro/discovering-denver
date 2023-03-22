@@ -49,3 +49,5 @@ router.get("/:id", async (req, res) => {
     res.status(500).redirect("/");
   }
 });
+
+module.exports = router;
