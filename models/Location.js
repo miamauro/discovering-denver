@@ -5,7 +5,7 @@ class Location extends Model {}
 
 Location.init(
   {
-    id: {
+    location_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -27,7 +27,7 @@ Location.init(
       type: DataTypes.INTEGER,
       references: {
         model: "category",
-        key: "id",
+        key: "category_id",
       },
     },
   },

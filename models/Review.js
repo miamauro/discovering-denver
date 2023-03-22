@@ -5,7 +5,7 @@ class Review extends Model {}
 
 Review.init(
   {
-    id: {
+    review_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
