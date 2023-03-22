@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Location } = require("../../models");
 
-//get all locations for a given category
+//get all locations for a given category and all review ratings
 router.get("/:category", async (req, res) => {
   try {
     const locationData = await Location.findAll(
