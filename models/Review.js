@@ -13,6 +13,10 @@ Review.init(
     },
     review_text: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+    rating: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     location_id: {
