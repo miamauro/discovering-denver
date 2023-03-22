@@ -27,7 +27,10 @@ router.post("/", async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
-      res.status(200).redirect(`/api/user/${newUser.user_id}`);
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        res.status(200).json(newUser);
+      });
     }
     res.status(400).json({ message: "failed to create new user" });
   } catch (err) {
@@ -52,7 +55,12 @@ router.post("/login", async (req, res) => {
       return;
     }
     //add cookies for loggedIn here
-    res.status(200).json({ user: userData, message: "Successfully logged in" });
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      res
+        .status(200)
+        .json({ user: userData, message: "Successfully logged in" });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

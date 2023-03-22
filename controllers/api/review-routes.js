@@ -7,7 +7,7 @@ router.get("/:id", async (req, res) => {
       where: { location_id: req.params.id },
     });
     const reviews = reviewData.map((element) => element.get({ plain: true }));
-    res.status(200).render("review", reviews);
+    res.status(200).json(reviews);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
