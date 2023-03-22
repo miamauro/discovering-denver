@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { Location, Review, User } = require("../../models");
 
 //user route to get specific user and associated reviews
 router.get("/", async (req, res) => {
