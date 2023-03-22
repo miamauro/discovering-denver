@@ -28,7 +28,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [5, 15],
+        len: [6, 15],
       },
     },
   },
