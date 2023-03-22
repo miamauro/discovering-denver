@@ -5,12 +5,12 @@ const User = require("./User");
 
 //Each Category has many Locations
 Category.hasMany(Location, {
-  foreignKey: "category_id",
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
 Location.belongsTo(Category, {
-  foreignKey: "category_id",
+  foreignKey: "id",
 });
 
 //Each Location has many Reviews
