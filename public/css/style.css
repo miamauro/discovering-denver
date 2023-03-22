@@ -2,3 +2,42 @@
   height: 20rem;
   overflow: hidden;
 }
+
+.rate-experience-btn {
+  position: relative;
+  top: -5rem;
+  right: 6rem;
+}
+
+.review-text h3 {
+  font-size: 1rem;
+}
+
+.review-text p {
+  font-size: 0.9rem;
+}
+
+.rating-num h4 {
+  font-size: 1.2rem;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
