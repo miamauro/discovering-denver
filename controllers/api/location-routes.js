@@ -4,9 +4,19 @@ const { Location } = require("../../models");
 //get all locations for a given category
 router.get("/:category", async (req, res) => {
   try {
-    const locationData = await Location.findAll({
-      where: { category_id: req.params.category },
-    });
+    const locationData = await Location.findAll(
+      {
+        where: { category_id: req.params.category },
+      },
+      {
+        include: [
+          {
+            model: Review,
+            attributes: ["rating"],
+          },
+        ],
+      }
+    );
     const locations = locationData.map((element) =>
       element.get({ plain: true })
     );
@@ -19,6 +29,20 @@ router.get("/:category", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
+    const locationData = await Location.findByPk(req.params.id, {
+      include: [
+        {
+          model: Review,
+          attributes: ["title", "text", "rating"],
+        },
+      ],
+    });
+    if (!locationData) {
+      res.status(404).redirect("/");
+      return;
+    }
+    const location = locationData.get({ plain: true });
+    res.status(200).render("location", location);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");

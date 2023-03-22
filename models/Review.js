@@ -22,6 +22,10 @@ Review.init(
     rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        max: 5,
+        min: 0,
+      },
     },
     location_id: {
       type: DataTypes.INTEGER,
