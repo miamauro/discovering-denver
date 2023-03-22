@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Review } = require("../../models");
+const { Location, Review, User } = require("../../models");
 
 //This route may be redundant but here it is, location route already grabs review data.
 router.get("/:id", async (req, res) => {

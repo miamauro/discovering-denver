@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Location } = require("../../models");
+const { Location, Review, User } = require("../../models");
 
 //get all locations for a given category and all review ratings
 router.get("/:category", async (req, res) => {
@@ -20,7 +20,7 @@ router.get("/:category", async (req, res) => {
     const locations = locationData.map((element) =>
       element.get({ plain: true })
     );
-    res.status(200).render("locations", locations);
+    res.status(200).json(locations);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
@@ -28,7 +28,7 @@ router.get("/:category", async (req, res) => {
 });
 
 //Get specific location information and associated review data
-router.get("/:id", async (req, res) => {
+router.get("/one/:id", async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
       include: [
@@ -43,7 +43,7 @@ router.get("/:id", async (req, res) => {
       return;
     }
     const location = locationData.get({ plain: true });
-    res.status(200).render("location", location);
+    res.status(200).json(location);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
