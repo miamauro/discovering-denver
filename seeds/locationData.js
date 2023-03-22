@@ -52,5 +52,5 @@ const locationData = [
 ];
 
 const seedLocation = () => Location.bulkCreate(locationData);
-seedLocation();
+
 module.exports = seedLocation;
