@@ -13,3 +13,11 @@ router.get("/:id", async (req, res) => {
     res.status(500).redirect("/");
   }
 });
+
+// router.post("/", async (req, res) => {
+//   try {
+//     const reviewData = await Review.create({
+//       review
+//     })
+//   }
+// })
