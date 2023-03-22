@@ -7,7 +7,7 @@ router.get("/:id", async (req, res) => {
       where: { location_id: req.params.id },
     });
     const reviews = reviewData.map((element) => element.get({ plain: true }));
-    res.status(200).render("reviews", reviews);
+    res.status(200).render("review", reviews);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
@@ -26,6 +26,27 @@ router.post("/", async (req, res) => {
     res.status(200).json(reviewData);
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const reviewData = await Review.update(
+      { text: req.body.text, title: req.body.title, rating: req.body.rating },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    if (!reviewData) {
+      res.status(404).redirect("/");
+      return;
+    }
+    res.status(200).json(reviewData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).redirect("/");
   }
 });
 
