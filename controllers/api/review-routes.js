@@ -1,19 +1,21 @@
 const router = require("express").Router();
 const { Review } = require("../../models");
 
+//This route may be redundant but here it is, location route already grabs review data.
 router.get("/:id", async (req, res) => {
   try {
     const reviewData = await Review.findAll({
       where: { location_id: req.params.id },
     });
     const reviews = reviewData.map((element) => element.get({ plain: true }));
-    res.status(200).render("review", reviews);
+    res.status(200).json(reviews);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
   }
 });
 
+//post new review.
 router.post("/", async (req, res) => {
   try {
     const reviewData = await Review.create({
@@ -29,8 +31,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+//update a review
 router.put("/:id", async (req, res) => {
   try {
+    //replace old values with values in req.body
     const reviewData = await Review.update(
       { text: req.body.text, title: req.body.title, rating: req.body.rating },
       {
@@ -50,6 +54,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//Delete a review
 router.delete("/:id", async (req, res) => {
   try {
     const reviewData = await Review.destroy({
