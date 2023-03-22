@@ -27,6 +27,7 @@ router.get("/:category", async (req, res) => {
   }
 });
 
+//Get specific location information and associated review data
 router.get("/:id", async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
