@@ -20,3 +20,5 @@ const seedAll = async () => {
 };
 
 seedAll();
+
+// seedCategory();
