@@ -20,6 +20,3 @@ const seedAll = async () => {
 };
 
 seedAll();
-// seedCategory();
-// seedUser();
-// seedLocation();
