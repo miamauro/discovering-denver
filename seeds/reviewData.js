@@ -31,6 +31,6 @@ const reviewData = [
   },
 ];
 
-// const seedReview = () => Review.bulkCreate(reviewData);
+const seedReview = () => Review.bulkCreate(reviewData);
 
-// module.exports = seedReview;
+module.exports = seedReview;
