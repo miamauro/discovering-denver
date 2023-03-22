@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Location } = require("../../models");
+const { Location, Review, User } = require("../../models");
 
 //get all locations for a given category and all review ratings
 router.get("/:category", async (req, res) => {
@@ -28,7 +28,7 @@ router.get("/:category", async (req, res) => {
 });
 
 //Get specific location information and associated review data
-router.get("/:id", async (req, res) => {
+router.get("/one/:id", async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
       include: [
