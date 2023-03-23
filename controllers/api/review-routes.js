@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
       title: req.body.title,
       text: req.body.text,
       rating: req.body.rating,
-      location_id: req.body.location_id,
+      location_id: req.session.location_id,
       user_id: req.session.user_id,
     });
     res.status(200).json(reviewData);
