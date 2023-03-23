@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,7 +27,7 @@
     class="text-center text-center bg-dark vh-100 d-flex allign-items-center"
   >
     <main class="form-signin w-100 m-auto">
-      <form>
+      <form class="login-form">
         <!-- <img class="mb-4" src="" alt="" width="72" height="57" /> -->
         <h1 class="display-5 text-light">Welcome,</h1>
         <h3 class="mb-4">Sign in to discover!</h3>
@@ -37,7 +36,7 @@
           <input
             type="email"
             class="form-control"
-            id="floatingInput"
+            id="email-login"
             placeholder="name@example.com"
           />
           <label for="floatingInput">Email ID</label>
@@ -46,7 +45,7 @@
           <input
             type="password"
             class="form-control"
-            id="floatingPassword"
+            id="password-login"
             placeholder="Password"
           />
           <label for="floatingPassword">Password</label>
@@ -64,9 +63,12 @@
           Sign in
         </button>
         <p class="mt-5 mb-3 text-light">
-          I'm not yet a member. <a href="">Sign Up</a>
+          I'm not yet a member.
+          <a href="">Sign Up</a>
         </p>
       </form>
     </main>
+
+    <script src="../public/js/login.js"></script>
   </body>
 </html>

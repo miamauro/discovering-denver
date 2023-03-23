@@ -57,20 +57,24 @@ a.forgot-pwd {
   z-index: 2;
 }
 
-.form-signin input[type="text"] {
+#name-signup {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="email"] {
+#email-login {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+#password-login {
+  /* margin-bottom: 10px; */
+  margin-bottom: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
-#floatingPassword {
+#email-signup {
   /* margin-bottom: 10px; */
   margin-bottom: -1px;
   border-top-left-radius: 0;
@@ -78,7 +82,15 @@ a.forgot-pwd {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-#floatingConfirmPassword {
+#password-signup {
+  /* margin-bottom: 10px; */
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#confirm-password-signup {
   /* margin-bottom: 10px; */
   margin-bottom: -1px;
   border-top-left-radius: 0;
