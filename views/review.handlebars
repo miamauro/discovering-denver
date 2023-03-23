@@ -77,7 +77,7 @@
             <input
               type="reviewTitle"
               class="form-control form-control-white"
-              id="floatingInput"
+              id="reviewTitle"
               placeholder="title of your review"
             />
             <label class="text-dark" for="floatingInput">review title</label>
@@ -92,7 +92,7 @@
             <label class="dark" for="floatingPassword">review text</label>
           </div>
 
-          <!--  -->
+    
           <div class="container-fluid reviewForm">
             <div class="input-group mb-3"></div>
 
@@ -127,7 +127,7 @@
                   }
                   // Keep the the self of the last item clicked
                   current = s;
-                  console.log(index);
+                  let rating = index
                 };
 
                 var template = `
@@ -153,5 +153,5 @@
     </div>
   </div>
 
-  <script src="../public/js/review.js"
+  <script src="../public/js/review.js"></script>
 
