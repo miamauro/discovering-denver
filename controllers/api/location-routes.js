@@ -16,7 +16,8 @@ router.get("/:category", async (req, res) => {
     const locations = locationData.map((element) =>
       element.get({ plain: true })
     );
-    res.status(200).json(locations);
+    console.log(locations);
+    res.status(200).render("categories", locations);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
@@ -39,7 +40,8 @@ router.get("/one/:id", async (req, res) => {
       return;
     }
     const location = locationData.get({ plain: true });
-    res.status(200).json(location);
+    console.log(location);
+    res.status(200).render("locations", location);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
