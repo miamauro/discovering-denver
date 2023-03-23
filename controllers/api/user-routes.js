@@ -89,10 +89,12 @@ router.post("/logout", (req, res) => {
   //if you are logged in then destroy the session page will now render as if not logged in.
   if (req.session.loggedIn) {
     req.session.destroy(() => {
+      console.log("log out function");
       res.status(204).end();
     });
   } else {
     //else respond 404 and end
+    console.log("failed to log out");
     res.status(404).end();
   }
 });
