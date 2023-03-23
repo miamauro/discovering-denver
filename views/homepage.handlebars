@@ -8,7 +8,7 @@
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
     <h2>Latest reviews</h2>
-    <p>see all</p>
+    <a href="" class="seeall"><p>See all</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
@@ -37,16 +37,22 @@
     >
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        style="cursor: pointer;"
+        onclick="window.location='/api/location/1';"
       >
-        <li class="m-0"> <a href="/api/location/1">Adventure</a></li></div>
+        <li class="m-0"> Adventure </li></div>
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        style="cursor: pointer;"
+        onclick="window.location='/api/location/2';"
       >
-        <li class="m-0"> <a href="/api/location/2">Entertainment</a></li></div>
+        <li class="m-0"> Entertainment </li></div>
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        style="cursor: pointer;"
+        onclick="window.location='/api/location/3';"
       >
-        <li class="m-0"> <a href="/api/location/3">Dining</a></li></div>
+        <li class="m-0">  Dining </li></div>
 
     </div>
     {{! <ul>
