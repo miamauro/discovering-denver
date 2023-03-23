@@ -22,7 +22,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -34,16 +34,16 @@
   <body>
 
     <nav class="fixed-top">
-      <a class="logo" href="#">Discovering Denver</a>
+      <a class="logo" href="/">Discovering Denver</a>
       <ul class="mb-0">
         <li class="nav-link"><a href="#">Add Review</a></li>
         {{#if loggedIn}}
           <li class="nav-link"><a href="#">Logout</a></li>
         {{else}}
-          <li class="nav-link"><a href="#">Login</a></li>
+          <li class="nav-link"><a href="/login">Login</a></li>
         {{/if}}
         <li>
-          <a class="signup" href="#">Sign Up
+          <a class="signup" href="/signup">Sign Up
             <span class="material-symbols-outlined"> login </span></a>
         </li>
       </ul>
