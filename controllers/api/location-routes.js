@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Location, Review, User } = require("../../models");
+const { Location, Review, Category, User } = require("../../models");
 
 //get all locations for a given category and all review ratings
 router.get("/:category", async (req, res) => {
@@ -10,6 +10,10 @@ router.get("/:category", async (req, res) => {
         {
           model: Review,
           attributes: ["rating"],
+        },
+        {
+          model: Category,
+          attributes: ["name"],
         },
       ],
     });
