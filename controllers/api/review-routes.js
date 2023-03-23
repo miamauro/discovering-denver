@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
       text: req.body.text,
       rating: req.body.rating,
       location_id: req.body.location_id,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
     res.status(200).json(reviewData);
   } catch (err) {

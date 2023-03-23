@@ -6,7 +6,7 @@ const { Location, Review, User } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { username: req.body.email },
+      where: { user_id: req.session.user_id },
       include: [
         {
           model: Review,
@@ -40,7 +40,8 @@ router.post("/", async (req, res) => {
       //Once new user is created then loggedIn becomes true.
       req.session.save(() => {
         req.session.loggedIn = true;
-        res.status(200).json(newUser);
+        req.session.user_id = newUser.user_id;
+        res.status(200).redirect("/");
       });
       return;
     }
@@ -56,25 +57,27 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { username: req.body.username },
+      where: { email: req.body.email },
     });
     //Check to make sure a username was found
     if (!userData) {
-      res.status(404).json({ message: "Incorrect username or password!" });
+      res.status(403).json({ message: "Incorrect username or password!" });
       return;
     }
     //Check to make sure the password was valid
     const passwordValidate = await userData.validatePassword(req.body.password);
     if (!passwordValidate) {
-      res.status(404).json({ message: "Incorrect username or password!" });
+      res.status(403).json({ message: "Incorrect username or password!" });
       return;
     }
     //if function got past checks then loggedIn becomes true and respond with 200.
     req.session.save(() => {
       req.session.loggedIn = true;
-      res
-        .status(200)
-        .json({ user: userData, message: "Successfully logged in" });
+      req.session.user_id = userData.user_id;
+      // res
+      //   .status(200)
+      //   .json({ user: userData, message: "Successfully logged in" });
+      res.redirect("/");
     });
   } catch (err) {
     res.status(500).json(err + { message: "error" });
