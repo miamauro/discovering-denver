@@ -115,6 +115,7 @@ a.forgot-pwd {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-control-white{
+  color:#000000 ;
   background-color: #ffffff;
 }
 
