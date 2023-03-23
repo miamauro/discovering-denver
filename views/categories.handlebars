@@ -18,12 +18,13 @@
   <div class="container d-flex flex-row justify-content-center col-10">
     <div class="card col-lg-4 m-2">
       <img
-        src="../public/images/{{~~~~~~~~PLACEHOLDER~~~~~~~~}}"
+        src="../public/images/{{ ~~~~~~~~PLACEHOLDER~~~~~~~~}}"
         class="card-img-top img-fluid h-100"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title">{{~~~~~~~~PLACEHOLDER TITLE TEXT~~~~~~~~}}</h5>
+        {{#each location.category as ~~~~~placeholder}}
+        <h5 class="card-title">{{location.name}}</h5>
         <p class="card-text">{{~~~~~~~~PLACEHOLDER DESCRIPTION TEXT~~~~~~~~}}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
