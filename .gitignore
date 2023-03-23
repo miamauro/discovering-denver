@@ -5,10 +5,7 @@ package-lock.json
 .env
 GH-test.html
 locations.html
-<<<<<<< HEAD
 review.html
 reviewScript.js
-=======
 signin.html
 signup.html
->>>>>>> main
