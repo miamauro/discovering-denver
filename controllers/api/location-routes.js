@@ -47,12 +47,10 @@ router.get("/one/:id", async (req, res) => {
       return;
     }
     const location = locationData.get({ plain: true });
-    console.log(location);
     req.session.save(() => {
       req.session.location_id = location.location_id;
       res.status(200).render("locations", {
         location,
-        location_id: req.session.location_id,
         loggedIn: req.session.loggedIn,
       });
     });
