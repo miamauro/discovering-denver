@@ -7,11 +7,11 @@
 
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
-    <h3>{{name}}</h3>
+    <h3>{{location.name}}</h3>
     <p>
-      {{description}}
+      {{location.description}}
     </p>
-    <p>Location: <span>{{address}}</span></p>
+    <p>Location: <span>{{location.address}}</span></p>
   </div>
   <div class="col-md-2">
     <div class="border border-1 col-8">
@@ -24,22 +24,23 @@
 </div>
 <div class="container col-md-10">
   <h2>Reviews:</h2>
+  {{#each location.reviews as |review|}}
+    <div
+      class="d-flex flex-wrap container mx-5 align-items-center col-md-7 my-5"
+    >
+      <div class="col-md-2 text-center">
+        <img src="../public/images/user-img.png" class="rounded-circle" />
+      </div>
+      <div class="col-md-8 review-text">
+        <h3>{{review.title}}</h3>
+        <p>
+          {{review.text}}
+        </p>
+      </div>
+      <div class="col-md-2 d-flex align-self-start rating-num">
+        <h4 class="ms-2">{{review.rating}}</h4>
+        ⭐
+      </div>
+    </div>
+  {{/each}}
 </div>
-
-{{#each reviews as |review|}}
-  <div class="d-flex flex-wrap container mx-5 align-items-center col-md-7 my-5">
-    <div class="col-md-2 text-center">
-      <img src="../public/images/user-img.png" class="rounded-circle" />
-    </div>
-    <div class="col-md-8 review-text">
-      <h3>{{review.title}}</h3>
-      <p>
-        {{review.text}}
-      </p>
-    </div>
-    <div class="col-md-2 d-flex align-self-start rating-num">
-      <h4 class="ms-2">{{review.rating}}</h4>
-      ⭐
-    </div>
-  </div>
-{{/each}}
