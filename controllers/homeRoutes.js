@@ -1,8 +1,21 @@
 const router = require("express").Router();
 const Review = require("../models/Review");
+const User = require("../models/User");
+const Location = require("../models/Location");
 
 router.get("/", async (req, res) => {
-  const reviewData = await Review.findAll().catch((err) => {
+  const reviewData = await Review.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Location,
+        attributes: ["name"],
+      },
+    ],
+  }).catch((err) => {
     res.json(err);
   });
   const twoReviews = reviewData.slice(reviewData.length - 2);
