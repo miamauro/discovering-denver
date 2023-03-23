@@ -9,13 +9,13 @@
   <div class="container">
     <div class="row">
       {{#each reviews as |review|}}
-        <div class="card col-4" style="width: 18rem;">
+        <div class="card col-4" style="width: 24rem;">
           {{! <img src="..." class="card-img-top" alt="..." /> }}
           <div class="card-body">
-            <h5 class="card-title">{{review.title}}</h5>
-            <h6>At: {{location.name}}</h6>
-            <p class="card-text">{{review.text}}</p>
-            <p>By: {{user.username}}</p>
+            <h5>{{location.name}}</h5>
+            <h6 class="card-title">{{review.title}}</h6>
+            <p class="card-text">"{{review.text}}"</p>
+            <p>-{{user.username}}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
@@ -25,3 +25,11 @@
     </div>
   </div>
 </div>
+<main>
+  <h1>Select a category to discover.</h1>
+  <ul>
+    <li> <a href="/api/location/1" style="color:black">Adventure</a></li>
+    <li> <a href="/api/location/2" style="color:black">Entertainment</a></li>
+    <li> <a href="/api/location/3" style="color:black">Dining</a></li>
+  </ul>
+</main>
