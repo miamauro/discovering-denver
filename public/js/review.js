@@ -7,22 +7,23 @@ const reviewFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.getElementById("reviewTitle");
-  const location = document.getElementById("trail");
+
   const text = document.getElementById("reviewText");
   //   const rating = document.querySelector("#reviewText");
+  // const stars = document.querySelector("#stars");
+  console.log(self.stars[1].selected);
 
   console.log(title.value);
   console.log(text.value);
   //   console.log(rating.value);
-  console.log(location.value);
 
-  if (title && text && rating) {
-    const response = await fetch("/api/review/", {
-      method: "POST",
-      body: JSON.stringify({ title, text }),
-      headers: { "Content-Type": "application/json" },
-    });
-  }
+  //   if (title && text && rating) {
+  //     const response = await fetch("/api/review/", {
+  //       method: "POST",
+  //       body: JSON.stringify({ title, text }),
+  //       headers: { "Content-Type": "application/json" },
+  //     });
+  //   }
 };
 
 const saveBtn = document.getElementById("saveBtn");
