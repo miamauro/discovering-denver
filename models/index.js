@@ -15,12 +15,12 @@ Location.belongsTo(Category, {
 
 //Each Location has many Reviews
 Location.hasMany(Review, {
-  foreignKey: "review_id",
+  foreignKey: "location_id",
   onDelete: "CASCADE",
 });
 
 Review.belongsTo(Location, {
-  foreignKey: "review_id",
+  foreignKey: "location_id",
 });
 
 //Each User has many Reviews
