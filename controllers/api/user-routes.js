@@ -6,7 +6,7 @@ const { Location, Review, User } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { username: req.body.username },
+      where: { user_id: req.session.user_id },
       include: [
         {
           model: Review,
@@ -40,6 +40,7 @@ router.post("/", async (req, res) => {
       //Once new user is created then loggedIn becomes true.
       req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.user_id = newUser.user_id;
         res.status(200).json(newUser);
       });
       return;
@@ -72,6 +73,7 @@ router.post("/login", async (req, res) => {
     //if function got past checks then loggedIn becomes true and respond with 200.
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user_id = userData.user_id;
       res
         .status(200)
         .json({ user: userData, message: "Successfully logged in" });
