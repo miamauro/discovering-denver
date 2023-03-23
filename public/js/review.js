@@ -1,13 +1,20 @@
+console.log("this script is linked");
+const reviewBtn = document.querySelector("#modalBtn");
+reviewBtn.addEventListener("click", console.log("this btn works"));
+
 const reviewFormHandler = async (event) => {
+  console.log("now we are in the review form handler");
   event.preventDefault();
 
-  const title = document.querySelector("#reviewTitle");
-
-  const text = document.querySelector("#reviewText");
+  const title = document.getElementById("reviewTitle");
+  const location = document.getElementById("trail");
+  const text = document.getElementById("reviewText");
   //   const rating = document.querySelector("#reviewText");
-  const saveBtn = document.querySelector("#saveBtn");
-  saveBtn.click(console.log("save review"));
-  // console.log(title);
+
+  console.log(title.value);
+  console.log(text.value);
+  //   console.log(rating.value);
+  console.log(location.value);
 
   if (title && text && rating) {
     const response = await fetch("/api/review/", {
@@ -17,3 +24,6 @@ const reviewFormHandler = async (event) => {
     });
   }
 };
+
+const saveBtn = document.getElementById("saveBtn");
+saveBtn.addEventListener("click", reviewFormHandler, console.log("save-test"));
