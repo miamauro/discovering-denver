@@ -5,3 +5,5 @@ package-lock.json
 .env
 GH-test.html
 locations.html
+signin.html
+signup.html
