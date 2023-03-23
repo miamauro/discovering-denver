@@ -14,15 +14,17 @@
 
 <!-- Click on activity section -->
 <div class="d-flex flex-row mb-3">
-  <div class="container d-flex flex-row justify-content-center col-10">
+  <div
+    class="container d-flex flex-row flex-wrap justify-content-center col-10"
+  >
     {{#each locations as |location|}}
-      <div class="card col-lg-4 m-2">
+      <div class="card col-lg-3 m-2">
         <div class="card-body">
           <h5 class="card-title">{{location.name}}</h5>
           <h6>{{location.address}}</h6>
           <p class="card-text">{{location.description}}</p>
           <a
-            href="/api/one/{{location.location_id}}"
+            href="/api/location/one/{{location.location_id}}"
             class="btn btn-primary"
           >See Reviews</a>
         </div>
