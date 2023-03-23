@@ -1,15 +1,19 @@
-<div class="welcome-card">
-  <h2>The places you don't want to miss</h2>
-  <h3>Discover and add your own reviews to your favorite activities in Denver</h3>
-  <button>Let's discover!</button>
+<div
+  class="welcome-card d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center container col-10"
+>
+  <h1>The places you don't want to miss.</h1>
+  <p>Discover and add your own reviews to your favorite activities in Denver</p>
+  <button class="btn btn-primary">Let's discover!</button>
 </div>
-<div class="latest-reviews">
-  <h4>Latest reviews</h4>
-  <p>see all</p>
+<div class="container col-10 latest-reviews">
+  <div class="d-flex justify-content-between mb-3">
+    <h2>Latest reviews</h2>
+    <p>see all</p>
+  </div>
   <div class="container">
-    <div class="row">
+    <div class="d-flex flex-wrap justify-content-center col-12">
       {{#each reviews as |review|}}
-        <div class="card col-4" style="width: 24rem;">
+        <div class="card col-12 col-md-5 m-4">
           {{! <img src="..." class="card-img-top" alt="..." /> }}
           <div class="card-body">
             <h5>{{location.name}}</h5>
@@ -25,11 +29,30 @@
     </div>
   </div>
 </div>
-<main>
-  <h1>Select a category to discover.</h1>
-  <ul>
-    <li> <a href="/api/location/1" style="color:black">Adventure</a></li>
-    <li> <a href="/api/location/2" style="color:black">Entertainment</a></li>
-    <li> <a href="/api/location/3" style="color:black">Dining</a></li>
-  </ul>
-</main>
+<div class="container my-5">
+  <div class="d-flex flex-column justify-content-center col-12 select-category">
+    <h2 class="text-center">Select a category to discover.</h2>
+    <div
+      class="col-12 d-flex flex-wrap justify-content-center align-items-center my-4"
+    >
+      <div
+        class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+      >
+        <li class="m-0"> <a href="/api/location/1">Adventure</a></li></div>
+      <div
+        class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+      >
+        <li class="m-0"> <a href="/api/location/2">Entertainment</a></li></div>
+      <div
+        class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+      >
+        <li class="m-0"> <a href="/api/location/3">Dining</a></li></div>
+
+    </div>
+    {{! <ul>
+      <li class="category"> <a href="/api/location/1">Adventure</a></li>
+      <li> <a href="/api/location/2">Entertainment</a></li>
+      <li> <a href="/api/location/3">Dining</a></li>
+    </ul> }}
+  </div>
+</div>
