@@ -29,12 +29,12 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/signup", async (req, res) => {
-  res.render("signup");
+  res.render("signup", { loggedIn: req.session.loggedIn });
   return;
 });
 
 router.get("/login", async (req, res) => {
-  res.render("login");
+  res.render("login", { loggedIn: req.session.loggedIn });
   return;
 });
 
