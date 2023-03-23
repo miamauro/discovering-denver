@@ -40,8 +40,14 @@ router.get("/one/:id", async (req, res) => {
       return;
     }
     const location = locationData.get({ plain: true });
-    console.log(location);
-    res.status(200).render("locations", location);
+
+    req.session.save(() => {
+      req.session.location_id = location.location_id;
+      res.status(200).render("locations", {
+        location,
+        location_id: req.session.location_id,
+      });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
