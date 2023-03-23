@@ -4,17 +4,15 @@ const { Location, Review, User } = require("../../models");
 //user route to get specific user and associated reviews
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findOne(
-      { where: { username: req.body.username } },
-      {
-        include: [
-          {
-            model: Review,
-            attributes: ["review_text", "rating", "location_id"],
-          },
-        ],
-      }
-    );
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+      include: [
+        {
+          model: Review,
+          attributes: ["text", "rating", "location_id"],
+        },
+      ],
+    });
     if (!userData) {
       res.status(404).json({ message: "user not found" });
       return;
