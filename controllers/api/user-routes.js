@@ -6,7 +6,7 @@ const { Location, Review, User } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { username: req.body.username },
+      where: { username: req.body.email },
       include: [
         {
           model: Review,

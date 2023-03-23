@@ -36,16 +36,18 @@
     <nav class="fixed-top">
       <a class="logo" href="/">Discovering Denver</a>
       <ul class="mb-0">
-        <li class="nav-link"><a href="#">Add Review</a></li>
+
         {{#if loggedIn}}
+          <li class="nav-link"><a href="#">Add Review</a></li>
           <li class="nav-link"><a href="#">Logout</a></li>
         {{else}}
           <li class="nav-link"><a href="/login">Login</a></li>
+          <li>
+            <a class="signup" href="/signup">Sign Up
+              <span class="material-symbols-outlined"> login </span></a>
+          </li>
         {{/if}}
-        <li>
-          <a class="signup" href="/signup">Sign Up
-            <span class="material-symbols-outlined"> login </span></a>
-        </li>
+
       </ul>
     </nav>
     <div class="mt-5">
