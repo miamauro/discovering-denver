@@ -81,7 +81,7 @@ a.logo {
   border-bottom: 4px solid var(--accent-color);
 }
 
-/*styles the resume button with variables for the color, background color and border*/
+/*styles the signup button with variables for the color, background color and border*/
 a.signup {
   background-color: var(--dark-color);
   border: var(--accent-color) solid 2px;
@@ -92,10 +92,14 @@ a.signup {
   min-width: 100px;
 }
 
-/*resume download icon*/
+/*signup icon*/
 .signup span {
   position: relative;
   top: 4px;
+}
+
+.margin-top {
+  margin-top: 6rem;
 }
 
 a.signup:hover {
@@ -129,6 +133,21 @@ a.forgot-pwd {
   text-decoration: none;
   font-weight: 400;
 }
+
+.welcome-card {
+  height: 22rem;
+}
+.select-category {
+  /* height: 22rem; */
+}
+
+.category {
+  background-color: var(--darker-color);
+  color: var(--light-color);
+  height: 8rem;
+  border-radius: 10px;
+}
+
 .location-header {
   height: 20rem;
   overflow: hidden;
@@ -223,8 +242,8 @@ a.forgot-pwd {
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.form-control-white{
-  color:#000000 ;
+.form-control-white {
+  color: #000000;
   background-color: #ffffff;
 }
 
@@ -236,7 +255,7 @@ a.forgot-pwd {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-.form-control-white:focus{
+.form-control-white:focus {
   background-color: white;
 }
 
