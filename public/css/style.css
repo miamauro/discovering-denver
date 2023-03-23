@@ -1,3 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;400;600;700;800;900&display=swap");
+
+/*sets universal values*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* sets root variables, useful for color themes*/
+:root {
+  --dark-color: #000b3e;
+  --darker-color: #000727;
+  --light-color: #f5f5f5;
+  --accent-color: #f1d900;
+  --accent-color-hover: #cbec0f2c;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --border-radius: 4px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  /* color: var(--light-color); */
+  /* background-color: var(--dark-color); */
+}
+footer {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+
+/*--------navigation section-----------*/
+
+/*tha nav bar is fixed and displays the navigation bar items with a space-between*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background-color: var(--dark-color);
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.048),
+    0 0px 20px 0 rgba(0, 0, 0, 0.048);
+}
+
+/*displays list items with a space-evenly separation*/
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+/*definets font styles of list items and anchors*/
+li,
+a {
+  font-weight: 700;
+  font-size: 18px;
+  list-style: none;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--light-color);
+  text-align: center;
+}
+li {
+  margin-left: 2rem;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+/*styles the border bottom of the nav items when hover*/
+.nav-link:hover {
+  border-bottom: 4px solid var(--accent-color);
+}
+
+/*styles the resume button with variables for the color, background color and border*/
+a.signup {
+  background-color: var(--dark-color);
+  border: var(--accent-color) solid 2px;
+  color: var(--light-color);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  text-align: center;
+  min-width: 100px;
+}
+
+/*resume download icon*/
+.signup span {
+  position: relative;
+  top: 4px;
+}
+
+a.signup:hover {
+  background-color: var(--accent-color-hover);
+  color: var(--light-color);
+}
+
 h1,
 h2,
 h3,
@@ -13,6 +118,10 @@ a {
   /* color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)); */
   text-decoration: none;
   font-weight: 800;
+}
+
+nav a {
+  font-weight: 400;
 }
 a.forgot-pwd {
   color: white;
