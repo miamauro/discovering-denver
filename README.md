@@ -15,3 +15,8 @@ This team includes James Geneser, George Harrison, Francisco Gutierrez Rodarte, 
 [Discovering Denver]()
 
 ## Screenshot
+
+### Libraries
+
+(link to lemonade lib documentation)
+https://lemonadejs.net/v2/examples/rating
