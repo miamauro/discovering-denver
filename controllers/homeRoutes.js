@@ -4,6 +4,9 @@ const User = require("../models/User");
 const Location = require("../models/Location");
 
 router.get("/", async (req, res) => {
+  console.log("==================================");
+  console.log(req.session);
+  console.log("==================================");
   const reviewData = await Review.findAll({
     include: [
       {
@@ -22,7 +25,7 @@ router.get("/", async (req, res) => {
   const reviews = twoReviews.map((review) => review.get({ plain: true }));
   // console.log(reviews);
 
-  res.render("homepage", { reviews });
+  res.render("homepage", { reviews, loggedIn: req.session.loggedIn });
 });
 
 router.get("/signup", async (req, res) => {

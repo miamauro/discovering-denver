@@ -23,6 +23,10 @@ Location.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     category_id: {
       type: DataTypes.INTEGER,
       references: {
