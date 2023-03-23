@@ -58,6 +58,27 @@ const locationData = [
     filename: "09-cityocity.jpeg",
     category_id: 3,
   },
+  {
+    name: "Denver Museum of Nature & Science",
+    address: "2001 Colorado Blvd, Denver, CO 80205",
+    description: "Museum of Nature and Science",
+    filename: "10-dmnsdino.jpg",
+    category_id: 2,
+  },
+  {
+    name: "Denver Zoo",
+    address: "2300 Steele St, Denver, CO 80205",
+    description: "Denver's one and only Zoo",
+    filename: "11-denver-zoo.jpg",
+    category_id: 2,
+  },
+  {
+    name: "McGregor Square",
+    address: "1901 Wazee St, Denver, CO 80202",
+    description: "Baseball themed square next to the Colorado Rockies stadium",
+    filename: "12-mcgregorsquare.jpg",
+    category_id: 2,
+  },
 ];
 
 const seedLocation = () => Location.bulkCreate(locationData);
