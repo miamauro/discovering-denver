@@ -270,3 +270,7 @@ a.forgot-pwd {
   padding-top: 3rem;
   padding-bottom: 1.625rem;
 }
+
+.hide{
+  display: hidden;
+}

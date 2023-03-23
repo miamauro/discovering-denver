@@ -6,24 +6,24 @@ const reviewFormHandler = async (event) => {
   console.log("now we are in the review form handler");
   event.preventDefault();
 
-  const title = document.getElementById("reviewTitle");
+  const title = document.getElementById("reviewTitle").value;
 
-  const text = document.getElementById("reviewText");
-  //   const rating = document.querySelector("#reviewText");
-  // const stars = document.querySelector("#stars");
-  console.log(self.stars[1].selected);
+  const text = document.getElementById("reviewText").value;
+  const rating = document.querySelector("#rating").textContent;
 
-  console.log(title.value);
-  console.log(text.value);
-  //   console.log(rating.value);
+  console.log(title);
+  console.log(text);
+  console.log(rating);
 
-  //   if (title && text && rating) {
-  //     const response = await fetch("/api/review/", {
-  //       method: "POST",
-  //       body: JSON.stringify({ title, text }),
-  //       headers: { "Content-Type": "application/json" },
-  //     });
-  //   }
+  if (title && text && rating) {
+    await fetch("/api/review/", {
+      method: "POST",
+      body: JSON.stringify({ title, text, rating }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    document.location.reload();
+  }
 };
 
 const saveBtn = document.getElementById("saveBtn");
