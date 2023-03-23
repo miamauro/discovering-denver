@@ -39,7 +39,7 @@ router.put("/:id", async (req, res) => {
       { text: req.body.text, title: req.body.title, rating: req.body.rating },
       {
         where: {
-          id: req.params.id,
+          review_id: req.params.id,
         },
       }
     );
@@ -59,7 +59,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: {
-        id: req.params.id,
+        review_id: req.params.id,
       },
     });
     res.status(200).json(reviewData);
