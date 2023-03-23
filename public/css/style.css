@@ -133,6 +133,21 @@ a.forgot-pwd {
   text-decoration: none;
   font-weight: 400;
 }
+
+.welcome-card {
+  height: 22rem;
+}
+.select-category {
+  /* height: 22rem; */
+}
+
+.category {
+  background-color: var(--darker-color);
+  color: var(--light-color);
+  height: 8rem;
+  border-radius: 10px;
+}
+
 .location-header {
   height: 20rem;
   overflow: hidden;
