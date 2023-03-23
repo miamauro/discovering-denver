@@ -1,9 +1,8 @@
 const router = require("express").Router();
 const apiRoutes = require("./api/index");
-
+const Review = require("../models/Review");
 
 const homeRoutes = require("./homeRoutes");
-
 
 router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
@@ -14,7 +13,7 @@ router.get("/", async (req, res) => {
   });
   const twoReviews = reviewData.slice(reviewData.length - 2);
   const reviews = twoReviews.map((review) => review.get({ plain: true }));
-  console.log(reviews);
+  // console.log(reviews);
 
   res.render("homepage", { reviews });
 });
