@@ -29,7 +29,8 @@ router.get("/:category", async (req, res) => {
 //Get specific location information and associated review data
 router.get("/one/:id", async (req, res) => {
   try {
-    const locationData = await Location.findByPk(req.params.id, {
+    const locationData = await Location.findOne({
+      where: { location_id: req.params.id },
       include: [
         {
           model: Review,
@@ -42,7 +43,7 @@ router.get("/one/:id", async (req, res) => {
       return;
     }
     const location = locationData.get({ plain: true });
-
+    console.log(location);
     req.session.save(() => {
       req.session.location_id = location.location_id;
       res.status(200).render("locations", {
