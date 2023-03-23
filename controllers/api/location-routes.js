@@ -17,7 +17,9 @@ router.get("/:category", async (req, res) => {
       element.get({ plain: true })
     );
     console.log(locations);
-    res.status(200).render("categories", locations);
+    res
+      .status(200)
+      .render("categories", { locations, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
@@ -40,8 +42,15 @@ router.get("/one/:id", async (req, res) => {
       return;
     }
     const location = locationData.get({ plain: true });
-    console.log(location);
-    res.status(200).render("locations", location);
+
+    req.session.save(() => {
+      req.session.location_id = location.location_id;
+      res.status(200).render("locations", {
+        location,
+        location_id: req.session.location_id,
+        loggedIn: req.session.loggedIn,
+      });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
