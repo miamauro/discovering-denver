@@ -39,7 +39,7 @@
 
         {{#if loggedIn}}
           <li class="nav-link"><a href="#">Add Review</a></li>
-          <li class="nav-link"><a href="#">Logout</a></li>
+          <li class="nav-link"><a id="logout" href="/logout">Logout</a></li>
         {{else}}
           <li class="nav-link"><a href="/login">Login</a></li>
           <li>
@@ -50,7 +50,7 @@
 
       </ul>
     </nav>
-    <div class="mt-5">
+    <div class="margin-top">
       <main>{{{body}}}</main>
     </div>
 
@@ -63,5 +63,8 @@
         </div>
       </div>
     </footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
