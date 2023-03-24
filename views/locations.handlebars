@@ -104,52 +104,58 @@
 
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
-    <h3>{{location.name}}</h3>
+    <h1>{{location.name}}</h1>
     <p>
-      {{location.description}}
+      {{location.address}}
     </p>
-    <p>Location: <span>{{location.address}}</span></p>
+    <p>{{location.description}}</p>
   </div>
   <div class="col-md-2">
     <div class="border border-1 col-8">
-      <div class="d-flex text-center justify-content-center px-3">
-        <h4>To Do: figure out how to pull average rating</h4>
-        ⭐
-      </div>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="d-flex flex-wrap justify-content-center col-12">
-    {{#each reviews as |review|}}
-      <div class="card col-12 col-lg-5 m-4">
-        {{! <img src="..." class="card-img-top" alt="..." /> }}
-        <div
-          class="card-body d-flex flex-column flex-wrap justtify-content-center align-items-stretch"
-        >
-          <div class="d-flex">
-            <div class="col-md-1 text-center me-2">
-              <img src="/images/user-img.png" class="rounded-circle user-img" />
+<div class="container col-10 latest-reviews">
+  <div class="d-flex justify-content-between mb-3">
+    <h3>Latest reviews</h3>
+    <a href="" class="seeall"><p>See all</p></a>
+  </div>
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center col-12">
+      {{#each reviews as |review|}}
+        <div class="card col-12 col-lg-5 m-4">
+          {{! <img src="..." class="card-img-top" alt="..." /> }}
+          <div
+            class="card-body d-flex flex-column flex-wrap justtify-content-center align-items-stretch"
+          >
+            <div class="d-flex">
+              <div class="col-md-1 text-center me-2">
+                <img
+                  src="/images/user-img.png"
+                  class="rounded-circle user-img"
+                />
+              </div>
+              <div class="">
+                <h6>{{user.username}}</h6>
+
+              </div>
             </div>
-            <div class="">
-              <h5>{{review.0.user.username}}</h5>
-            </div>
+
+            <h2 class="card-title text-center my-3">{{review.title}}</h2>
+            <div class="stars text-center my-4"><span
+                class="material-symbols-outlined stars-icons"
+              >
+                star star star star
+              </span></div>
+            <p class="card-text">"{{review.text}}"</p>
+
+            <a href="#" class="btn btn-primary">View review</a>
           </div>
-
-          <h2 class="card-title text-center my-3">{{review.title}}</h2>
-          <div class="stars text-center my-4"><span
-              class="material-symbols-outlined stars-icons"
-            >
-              star star star star
-            </span></div>
-          <p class="card-text">"{{review.text}}"</p>
-
-          <a href="#" class="btn btn-primary">View review</a>
         </div>
-      </div>
 
-    {{/each}}
+      {{/each}}
 
+    </div>
   </div>
 </div>
 
