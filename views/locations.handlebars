@@ -2,17 +2,16 @@
   <img src="/images/{{filename}}" alt="..." />
 </div>
 <div class="d-flex justify-content-end rate-experience-btn">
- 
-  <button
-  type="button"
-  class="btn btn-primary"
-  data-toggle="modal"
-  data-target="#Modal"
->
-  Rate experience
-</button>
-</div>
 
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#Modal"
+  >
+    New Review
+  </button>
+</div>
 
 <div
   class="modal fade"
@@ -95,13 +94,6 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
     <h1>{{location.name}}</h1>
@@ -117,8 +109,8 @@
 </div>
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
-    <h3>Latest reviews</h3>
-    <a href="" class="seeall"><p>See all</p></a>
+    <h3>Latest Reviews</h3>
+    <a href="" class="seeall"><p>See All</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
@@ -147,9 +139,8 @@
               >
                 star star star star
               </span></div>
-            <p class="card-text">"{{review.text}}"</p>
+            <p class="card-text text-center">"{{review.text}}"</p>
 
-            <a href="#" class="btn btn-primary">View review</a>
           </div>
         </div>
 
