@@ -46,13 +46,14 @@
 
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
-    <h2>Latest reviews</h2>
-    <a href="" class="seeall"><p>See all</p></a>
+    <h2>Latest Reviews</h2>
+    <a href="" class="seeall"><p>See All</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
       {{#each reviews as |review|}}
-        <div class="card col-12 col-lg-5 m-4">
+        <div class="card col-12 col-lg-5 m-4 reviewCard">
+          <div hidden id="rating">{{review.rating}}</div>
           {{! <img src="..." class="card-img-top" alt="..." /> }}
           <div
             class="card-body d-flex flex-column flex-wrap justtify-content-center align-items-stretch"
@@ -65,20 +66,23 @@
                 />
               </div>
               <div class="">
-                <h5>{{user.username}}</h5>
-                <h6 class="card-location">{{location.name}}</h6>
+                <h6>{{user.username}}</h6>
               </div>
             </div>
 
-            <h2 class="card-title text-center my-3">{{review.title}}</h2>
+            <h2 class="card-title text-center my-3">{{location.name}}</h2>
+            <h5 class="card-location text-center">{{review.title}}</h5>
             <div class="stars text-center my-4"><span
                 class="material-symbols-outlined stars-icons"
               >
-                star star star star
+                {{review.filledStars}}{{review.emptyStars}}
               </span></div>
-            <p class="card-text">"{{review.text}}"</p>
+            <p class="card-text text-center">"{{review.text}}"</p>
 
-            <a href="#" class="btn btn-primary">View review</a>
+            <a
+              href="/api/location/one/{{location_id}}"
+              class="btn btn-primary"
+            >More {{location.name}} Experiences</a>
           </div>
         </div>
 
