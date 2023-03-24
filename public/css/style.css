@@ -77,6 +77,13 @@ a.logo {
   /* color: var(--accent-color); */
 }
 
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.star-fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 /*styles the border bottom of the nav items when hover*/
 .nav-link:hover {
   border-bottom: 4px solid var(--accent-color);

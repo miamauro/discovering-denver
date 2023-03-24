@@ -37,11 +37,47 @@
             </div>
 
             <h2 class="card-title text-center my-3">{{review.title}}</h2>
-            <div class="stars text-center my-4"><span
-                class="material-symbols-outlined stars-icons"
-              >
-                star star star star
-              </span></div>
+            <div class="stars text-center my-4"><h1
+                class="rating-value"
+              >{{review.rating}}</h1>
+              {{#if review.rating}}
+              <span class="material-symbols-rounded stars-icons star-fill">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              {{else}}
+               <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              <span class="material-symbols-rounded stars-icons">
+                star
+              </span>
+              {{/if}}
+              {{! <span class="material-symbols-rounded stars-icons">
+                star_half
+              </span> }}
+
+            </div>
             <p class="card-text">"{{review.text}}"</p>
 
             <a href="#" class="btn btn-primary">View review</a>
@@ -86,3 +122,4 @@
     </ul> }}
   </div>
 </div>
+<script src="/js/homepage.js"></script>
