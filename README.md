@@ -2,9 +2,17 @@
 
 ## Description
 
-Discovering Denver is a full-stack application allowing users to learn more about Denver hot spots. Read reviews and hear what others have to say or post your own to share an experience.
+Discovering Denver is a full-stack application allowing users to learn more about Denver hot spots. Read reviews and see what others have to say or post your own to share an experience.
 
 ## Technologies Used
+
+- Express.js
+- Sequelize
+- MySQL2
+- bcrypt
+- dotenv
+- Lemonade
+- Handlebars.js
 
 ## Collaboration
 
@@ -15,8 +23,3 @@ This team includes James Geneser, George Harrison, Francisco Gutierrez Rodarte, 
 [Discovering Denver]()
 
 ## Screenshot
-
-### Libraries
-
-(link to lemonade lib documentation)
-https://lemonadejs.net/v2/examples/rating
