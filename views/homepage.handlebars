@@ -1,26 +1,50 @@
 <div
-  class="welcome-card d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center container col-10"
+  class="welcome-card container-fluid d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-12 mb-5"
 >
-  <h1>The places you don't want to miss.</h1>
-  <p>Discover and add your own reviews to your favorite activities in Denver</p>
-  <button class="btn btn-primary">Let's discover!</button>
+  <div
+    class="d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-10"
+  >
+    <h1>The places you don't want to miss.</h1>
+    <p>Discover and add your own reviews to your favorite activities in Denver</p>
+    <a href="#category-section" class="btn btn-primary px-5 py-2">Let's get
+      started!</a>
+  </div>
 </div>
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
     <h2>Latest reviews</h2>
-    <p>see all</p>
+    <a href="" class="seeall"><p>See all</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
       {{#each reviews as |review|}}
-        <div class="card col-12 col-md-5 m-4">
+        <div class="card col-12 col-lg-5 m-4">
           {{! <img src="..." class="card-img-top" alt="..." /> }}
-          <div class="card-body">
-            <h5>{{location.name}}</h5>
-            <h6 class="card-title">{{review.title}}</h6>
+          <div
+            class="card-body d-flex flex-column flex-wrap justtify-content-center align-items-stretch"
+          >
+            <div class="d-flex">
+              <div class="col-md-1 text-center me-2">
+                <img
+                  src="/images/user-img.png"
+                  class="rounded-circle user-img"
+                />
+              </div>
+              <div class="">
+                <h5>{{user.username}}</h5>
+                <h6 class="card-location">{{location.name}}</h6>
+              </div>
+            </div>
+
+            <h2 class="card-title text-center my-3">{{review.title}}</h2>
+            <div class="stars text-center my-4"><span
+                class="material-symbols-outlined stars-icons"
+              >
+                star star star star
+              </span></div>
             <p class="card-text">"{{review.text}}"</p>
-            <p>-{{user.username}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+            <a href="#" class="btn btn-primary">View review</a>
           </div>
         </div>
 
@@ -29,7 +53,7 @@
     </div>
   </div>
 </div>
-<div class="container my-5">
+<div id="category-section" class="container my-5">
   <div class="d-flex flex-column justify-content-center col-12 select-category">
     <h2 class="text-center">Select a category to discover.</h2>
     <div
@@ -37,16 +61,22 @@
     >
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        style="cursor: pointer;"
+        onclick="window.location='/api/location/1';"
       >
-        <li class="m-0"> <a href="/api/location/1">Adventure</a></li></div>
+        <li class="m-0"> Adventure </li></div>
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        style="cursor: pointer;"
+        onclick="window.location='/api/location/2';"
       >
-        <li class="m-0"> <a href="/api/location/2">Entertainment</a></li></div>
+        <li class="m-0"> Entertainment </li></div>
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        style="cursor: pointer;"
+        onclick="window.location='/api/location/3';"
       >
-        <li class="m-0"> <a href="/api/location/3">Dining</a></li></div>
+        <li class="m-0"> Dining </li></div>
 
     </div>
     {{! <ul>

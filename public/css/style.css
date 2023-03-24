@@ -74,7 +74,7 @@ a:hover {
 a.logo {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
 }
 
 /*styles the border bottom of the nav items when hover*/
@@ -98,14 +98,31 @@ a.signup {
   position: relative;
   top: 4px;
 }
-
-.margin-top {
-  margin-top: 5rem;
-}
-
 a.signup:hover {
   background-color: #0364ed52;
   color: var(--light-color);
+}
+a.logout {
+  background-color: var(--dark-color);
+  border: var(--accent-color) solid 2px;
+  color: var(--light-color);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  text-align: center;
+  min-width: 100px;
+}
+
+/*signup icon*/
+.logout span {
+  position: relative;
+  top: 4px;
+}
+a.logout:hover {
+  background-color: #ed033a52;
+  color: var(--light-color);
+}
+.margin-top {
+  margin-top: 5rem;
 }
 
 h1,
@@ -118,6 +135,14 @@ button {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+h1,
+h2 {
+  font-weight: 600;
+}
+
+.stars-icons {
+  font-size: 240%;
+}
 a {
   color: white;
   /* color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)); */
@@ -154,6 +179,13 @@ a.seeall {
   color: #959595;
 }
 
+.card {
+  border-radius: 20px;
+}
+
+.user-img {
+  width: 30px;
+}
 .welcome-card {
   height: 100vh;
   background-color: #e9e9e9;
@@ -331,12 +363,8 @@ input:-internal-autofill-selected {
   color: fieldtext !important;
 }
 
-
-div{
-  width:100px;
-  height:50px;
-  display:block;
-  border:1px solid red;
-  padding:10px;
-  overflow:hidden;
+@media only screen and (max-width: 575px) {
+  .margin-top {
+    margin-top: 0rem;
+  }
 }
