@@ -1,18 +1,14 @@
 <div
-  class="welcome-card container-fluid d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-12 mb-5"
+  class="welcome-card d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center container col-10"
 >
-  <div
-    class="d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-10"
-  >
-    <h1>The places you don't want to miss.</h1>
-    <p>Discover and add your own reviews to your favorite activities in Denver</p>
-    <a href="#" class="btn btn-primary">Let's get started!</a>
-  </div>
+  <h1>The places you don't want to miss.</h1>
+  <p>Discover and add your own reviews to your favorite activities in Denver</p>
+  <button class="btn btn-primary">Let's discover!</button>
 </div>
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
     <h2>Latest reviews</h2>
-    <a href="" class="seeall"><p>See all</p></a>
+    <p>see all</p>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
@@ -33,7 +29,7 @@
     </div>
   </div>
 </div>
-<div id="categories-section" class="container my-5">
+<div class="container my-5">
   <div class="d-flex flex-column justify-content-center col-12 select-category">
     <h2 class="text-center">Select a category to discover.</h2>
     <div
@@ -41,22 +37,16 @@
     >
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
-        style="cursor: pointer;"
-        onclick="window.location='/api/location/1';"
       >
-        <li class="m-0"> Adventure </li></div>
+        <li class="m-0"> <a href="/api/location/1">Adventure</a></li></div>
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
-        style="cursor: pointer;"
-        onclick="window.location='/api/location/2';"
       >
-        <li class="m-0"> Entertainment </li></div>
+        <li class="m-0"> <a href="/api/location/2">Entertainment</a></li></div>
       <div
         class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
-        style="cursor: pointer;"
-        onclick="window.location='/api/location/3';"
       >
-        <li class="m-0"> Dining </li></div>
+        <li class="m-0"> <a href="/api/location/3">Dining</a></li></div>
 
     </div>
     {{! <ul>
