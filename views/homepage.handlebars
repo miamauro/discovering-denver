@@ -12,8 +12,8 @@
 </div>
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
-    <h2>Latest reviews</h2>
-    <a href="" class="seeall"><p>See all</p></a>
+    <h2>Latest Reviews</h2>
+    <a href="" class="seeall"><p>See All</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
@@ -42,9 +42,12 @@
               >
                 star star star star
               </span></div>
-            <p class="card-text">"{{review.text}}"</p>
+            <p class="card-text text-center">"{{review.text}}"</p>
 
-            <a href="#" class="btn btn-primary">View review</a>
+            <a
+              href="/api/location/one/{{location_id}}"
+              class="btn btn-primary"
+            >More {{location.name}} Experiences</a>
           </div>
         </div>
 

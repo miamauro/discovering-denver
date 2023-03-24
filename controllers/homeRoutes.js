@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       },
       {
         model: Location,
-        attributes: ["name"],
+        attributes: ["name", "location_id"],
       },
     ],
   }).catch((err) => {
