@@ -18,7 +18,8 @@
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
       {{#each reviews as |review|}}
-        <div class="card col-12 col-lg-5 m-4">
+        <div class="card col-12 col-lg-5 m-4 reviewCard">
+          <div hidden id="rating">{{review.rating}}</div>
           {{! <img src="..." class="card-img-top" alt="..." /> }}
           <div
             class="card-body d-flex flex-column flex-wrap justtify-content-center align-items-stretch"
@@ -40,7 +41,7 @@
             <div class="stars text-center my-4"><span
                 class="material-symbols-outlined stars-icons"
               >
-                star star star star
+                {{review.filledStars}}{{review.emptyStars}}
               </span></div>
             <p class="card-text text-center">"{{review.text}}"</p>
 
