@@ -33,7 +33,7 @@
 
   <body>
 
-    <nav class="fixed-top">
+    <nav class="fixed-top d-none d-sm-flex">
       <a class="logo" href="/">Discovering Denver</a>
       <ul class="mb-0">
 
@@ -41,9 +41,10 @@
           <li class="nav-link"><a href="#">Add Review</a></li>
           <li class="nav-link"><a id="logout">Logout</a></li>
         {{else}}
-          <li class="nav-link"><a href="/login">Login</a></li>
+          {{! <li class="nav-link"><a href="/login">Login</a></li>
+          }}
           <li>
-            <a class="signup" href="/signup">Sign Up
+            <a class="signup" href="/login">Sign In
               <span class="material-symbols-outlined"> login </span></a>
           </li>
         {{/if}}
@@ -66,5 +67,6 @@
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
     {{/if}}
+
   </body>
 </html>

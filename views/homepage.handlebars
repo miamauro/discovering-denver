@@ -1,9 +1,13 @@
 <div
-  class="welcome-card d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center container col-10"
+  class="welcome-card container-fluid d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-12 mb-5"
 >
-  <h1>The places you don't want to miss.</h1>
-  <p>Discover and add your own reviews to your favorite activities in Denver</p>
-  <button class="btn btn-primary">Let's discover!</button>
+  <div
+    class="d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-10"
+  >
+    <h1>The places you don't want to miss.</h1>
+    <p>Discover and add your own reviews to your favorite activities in Denver</p>
+    <a href="#" class="btn btn-primary">Let's get started!</a>
+  </div>
 </div>
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
@@ -29,7 +33,7 @@
     </div>
   </div>
 </div>
-<div class="container my-5">
+<div id="categories-section" class="container my-5">
   <div class="d-flex flex-column justify-content-center col-12 select-category">
     <h2 class="text-center">Select a category to discover.</h2>
     <div
@@ -52,7 +56,7 @@
         style="cursor: pointer;"
         onclick="window.location='/api/location/3';"
       >
-        <li class="m-0">  Dining </li></div>
+        <li class="m-0"> Dining </li></div>
 
     </div>
     {{! <ul>
