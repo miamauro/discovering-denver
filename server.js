@@ -1,4 +1,3 @@
-// const Rating = require("./utils/helpers");
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
@@ -28,8 +27,6 @@ const hbs = exphbs.create({ helpers });
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
-// Handlebars.registerHelper("rating", Rating);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
