@@ -1,3 +1,6 @@
+
+
+
 <div class="container-fluid text-center bg-primary p-0 location-header">
   <img src="/images/{{filename}}" alt="..." />
 </div>
@@ -51,37 +54,16 @@
             id="reviewText"
             placeholder="your review text"
           ></textarea>
-          <label class="dark" for="floatingPassword">review text</label>
+          <label class="text-dark" for="floatingPassword">review text</label>
         </div>
 
         <div class="container-fluid reviewForm">
           <div class="input-group mb-3"></div>
 
-          {{!-- <script src="https://lemonadejs.net/v2/lemonade.js"></script>
+          <script src="https://lemonadejs.net/v2/lemonade.js"></script>
           <div id="root"></div>
-          <script>
-            var Rating = function () { var self = {}; // Five stars self.stars =
-            [{}, {}, {}, {}, {}]; // Current clicked star self var current =
-            null; self.click = function (s) { // If the self of the clicked item
-            is not selected reset the null if (!s.selected) { current = null; }
-            // Get the position of the self of the clicked item var index =
-            self.stars.indexOf(s); // Go through all stars and define select or
-            non selected for (var i = 0; i < self.stars.length; i++) { if (i <=
-            index && s !== current) { self.stars[i].selected = 1;
-            self.stars[i].el.style.color = "red"; } else {
-            self.stars[i].selected = 0; self.stars[i].el.style.color = ""; } }
-            // Keep the the self of the last item clicked current = s; let
-            rating = index }; var template = ` <div @loop="self.stars"
-            style="cursor: pointer"> <i class="material-icons"
-            onclick="self.parent.click(self)">{{self.selected
-              ?
-              "star"
-              :
-              "star_outline"
-            }}</i> </div>`; console.log(template); return
-            lemonade.element(template, self); }; lemonade.render(Rating,
-            document.getElementById("root"));
-          </script> --}}
+          <script src="/js/rating.js"></script>
+ 
         </div>
       </div>
       <div class="modal-footer">
@@ -93,6 +75,15 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+  <div id="starIndex"></div>
+
+
+
 
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
