@@ -16,7 +16,7 @@ const locationData = [
   {
     name: "Denver Botanical Gardens",
     address: "1007 York St, Denver, CO 80206",
-    filename: "03-botanical-gardens.jpeg",
+    filename: "03-botanic-gardens.jpeg",
     category_id: 1,
   },
   {
