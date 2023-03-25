@@ -440,31 +440,39 @@ input:-internal-autofill-selected {
   background-repeat: none;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 36s linear infinite 0s;
+  animation: imageAnimation 48s linear infinite 0s;
 }
 
 .cb-slideshow li:nth-child(1) span {
-  background-image: url("../images/01-trading-post-trail.jpeg");
+  background-image: url("../images/slideshow-01.jpg");
 }
 .cb-slideshow li:nth-child(2) span {
-  background-image: url("../images/06-coorsfield-baseball.jpeg");
+  background-image: url("../images/slideshow-02.jpeg");
   animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
-  background-image: url("../images/11-denver-zoo.jpg");
+  background-image: url("../images/slideshow-03.jpg");
   animation-delay: 12s;
 }
 .cb-slideshow li:nth-child(4) span {
-  background-image: url("../images/05-missionballroom-theater.jpeg");
+  background-image: url("../images/slideshow-04.jpg");
   animation-delay: 18s;
 }
 .cb-slideshow li:nth-child(5) span {
-  background-image: url("../images/10-dmnsdino.jpg");
+  background-image: url("../images/slideshow-05.jpg");
   animation-delay: 24s;
 }
 .cb-slideshow li:nth-child(6) span {
-  background-image: url("../images/Colorado-flag.jpeg");
+  background-image: url("../images/slideshow-06.jpeg");
   animation-delay: 30s;
+}
+.cb-slideshow li:nth-child(7) span {
+  background-image: url("../images/slideshow-07.jpeg");
+  animation-delay: 36s;
+}
+.cb-slideshow li:nth-child(8) span {
+  background-image: url("../images/slideshow-08.jpg");
+  animation-delay: 42s;
 }
 .cb-slideshow li:nth-child(2) div {
   animation-delay: 6s;
@@ -480,6 +488,12 @@ input:-internal-autofill-selected {
 }
 .cb-slideshow li:nth-child(6) div {
   animation-delay: 30s;
+}
+.cb-slideshow li:nth-child(7) div {
+  animation-delay: 36s;
+}
+.cb-slideshow li:nth-child(8) div {
+  animation-delay: 42s;
 }
 
 @keyframes imageAnimation {
