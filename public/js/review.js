@@ -1,13 +1,10 @@
 console.log("this script is linked");
-const reviewBtn = document.querySelector("#modalBtn");
-reviewBtn.addEventListener("click", console.log("this btn works"));
 
 const reviewFormHandler = async (event) => {
   console.log("now we are in the review form handler");
   event.preventDefault();
 
   const title = document.getElementById("reviewTitle").value;
-
   const text = document.getElementById("reviewText").value;
   const rating = document.querySelector("#rating").textContent;
 
@@ -27,4 +24,4 @@ const reviewFormHandler = async (event) => {
 };
 
 const saveBtn = document.getElementById("saveBtn");
-saveBtn.addEventListener("click", reviewFormHandler, console.log("save-test"));
+saveBtn.click(reviewFormHandler);
