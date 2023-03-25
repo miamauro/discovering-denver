@@ -1,9 +1,6 @@
-console.log("this script is linked");
-
 const saveBtn = document.getElementById("saveBtn");
 
 const reviewFormHandler = async (event) => {
-  console.log("now we are in the review form handler");
   event.preventDefault();
 
   const title = document.getElementById("reviewTitle").value;

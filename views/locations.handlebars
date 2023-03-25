@@ -123,13 +123,17 @@
 
               </div>
             </div>
-
+            
             <h2 class="card-title text-center my-3">{{review.title}}</h2>
-            <div class="stars text-center my-4"><span
-                class="material-symbols-outlined stars-icons"
-              >
-                star star star star
-              </span></div>
+            
+              <div class="stars text-center"><span
+                class="material-symbols-rounded stars-icons star-fill">
+                {{review.filledStars}}</span>
+              <span class="stars-empty material-symbols-rounded stars-icons">
+                {{review.emptyStars}}</span>
+            </div>
+
+            
             <p class="card-text text-center">"{{review.text}}"</p>
 
           </div>
