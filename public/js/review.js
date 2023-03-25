@@ -1,5 +1,7 @@
 console.log("this script is linked");
 
+const saveBtn = document.getElementById("saveBtn");
+
 const reviewFormHandler = async (event) => {
   console.log("now we are in the review form handler");
   event.preventDefault();
@@ -17,11 +19,8 @@ const reviewFormHandler = async (event) => {
       method: "POST",
       body: JSON.stringify({ title, text, rating }),
       headers: { "Content-Type": "application/json" },
-    });
-
-    document.location.reload();
+    }).then(document.location.reload());
   }
 };
 
-const saveBtn = document.getElementById("saveBtn");
-saveBtn.click(reviewFormHandler);
+saveBtn.addEventListener("click", reviewFormHandler);
