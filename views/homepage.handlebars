@@ -57,7 +57,6 @@
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
     <h2>Latest Reviews</h2>
-    <a href="" class="seeall"><p>See All</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
@@ -81,7 +80,6 @@
             </div>
 
             <h2 class="card-title text-center mt-5">{{location.name}}</h2>
-
 
             <div class="stars text-center"><span
                 class="material-symbols-rounded stars-icons star-fill"
@@ -107,7 +105,7 @@
             <a
               href="/api/location/one/{{location_id}}"
               class="btn btn-primary py-3"
-            >View more reviews</a>
+            >See more {{location.name}} reviews.</a>
           </div>
         </div>
 
