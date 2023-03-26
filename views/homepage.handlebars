@@ -1,47 +1,57 @@
-<div
-  class="welcome-card container-fluid d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-12 mb-5"
->
-
+<div class="welcome-card mb-5">
   <div
-    class="d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-10"
+    class="container-fluid vh-100 d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-10"
   >
-    {{! slide show attempt }}
-    <div>
-      <ul class="cb-slideshow">
-        <li>
-          <span>Image 01</span>
-        </li>
-        <li>
-          <span>Image 01</span>
-        </li>
-        <li>
-          <span>Image 01</span>
-        </li>
-        <li>
-          <span>Image 01</span>
-        </li>
-        <li>
-          <span>Image 01</span>
-        </li>
-      </ul>
-    </div>
-    {{! end slide show }}
 
     <div
-      class="d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center bg-lightblue"
+      class="d-flex flex-column flex-wrap justify-content-center align-items-start align-items-sm-center col-12 col-md-10"
     >
-      <h1 class="forward">The places you don't want to miss.</h1>
-      <p class="forward">Discover and add your own reviews to your favorite
-        activities in Denver</p>
-      <a
-        href="#category-section"
-        id="forward"
-        class="btn btn-primary px-5 py-2 forward"
-      >Let's get started!</a>
+      {{! slide show attempt }}
+      <div>
+        <ul class="cb-slideshow">
+          <li>
+            <span> </span>
+          </li>
+          <li>
+            <span> </span>
+          </li>
+          <li>
+            <span> </span>
+          </li>
+          <li>
+            <span> </span>
+          </li>
+          <li>
+            <span> </span>
+          </li>
+          <li>
+            <span> </span>
+          </li>
+          <li>
+            <span> </span>
+          </li>
+        </ul>
+      </div>
+      {{! end slide show }}
+
+      <div
+        class="d-flex flex-column flex-wrap justify-content-center align-items-stretch align-items-sm-center text-lg-center col-lg-6 bg-lightblue"
+      >
+
+        <h3 class="logo d-flex d-sm-none forward" href="/">Discovering Denver</h3>
+        <h1 class="forward">The places you don't want to miss.</h1>
+        <p class="forward">Discover and add your own reviews to your favorite
+          activities in Denver</p>
+        <a
+          href="#category-section"
+          id="forward"
+          class="btn btn-primary px-5 py-2 forward"
+        >Let's get started!</a>
+      </div>
+
     </div>
 
   </div>
-
 </div>
 
 <div class="container col-10 latest-reviews">
@@ -56,9 +66,9 @@
           <div hidden id="rating">{{review.rating}}</div>
           {{! <img src="..." class="card-img-top" alt="..." /> }}
           <div
-            class="card-body d-flex flex-column flex-wrap justtify-content-center align-items-stretch"
+            class="card-body d-flex flex-column flex-wrap justify-content-between align-items-stretch col-11 mx-auto"
           >
-            <div class="d-flex">
+            <div class="d-flex align-items-center">
               <div class="col-md-1 text-center me-2">
                 <img
                   src="/images/user-img.png"
@@ -66,23 +76,38 @@
                 />
               </div>
               <div class="">
-                <h6>{{user.username}}</h6>
+                <h6 class="mb-0">{{user.username}}</h6>
               </div>
             </div>
 
-            <h2 class="card-title text-center my-3">{{location.name}}</h2>
-            <h5 class="card-location text-center">{{review.title}}</h5>
-            <div class="stars text-center my-4"><span
-                class="material-symbols-outlined stars-icons"
-              >
-                {{review.filledStars}}{{review.emptyStars}}
-              </span></div>
-            <p class="card-text text-center">"{{review.text}}"</p>
+            <h2 class="card-title text-center mt-5">{{location.name}}</h2>
+
+
+            <div class="stars text-center"><span
+                class="material-symbols-rounded stars-icons star-fill"
+              >{{review.filledStars}}</span>
+              <span class="stars-empty material-symbols-rounded stars-icons">
+                {{review.emptyStars}}</span>
+            </div>
+
+            <h3 class="card-location text-center">{{review.title}}</h3>
+            {{!-- <div class="stars text-center my-4 d-flex d-sm-none">
+              <span
+                class="material-symbols-rounded stars-icons star-fill"
+              >star</span>
+              <h2>{{review.rating}}</h2>
+            </div> --}}
+            <p
+              id="review-text"
+              class="card-text text-center"
+            >"{{review.text}}"</p>
+            <div id=" "></div>
+            <a id="more">... Read more </a>
 
             <a
               href="/api/location/one/{{location_id}}"
-              class="btn btn-primary"
-            >More {{location.name}} Experiences</a>
+              class="btn btn-primary py-3"
+            >View more reviews</a>
           </div>
         </div>
 
@@ -93,24 +118,24 @@
 </div>
 <div id="category-section" class="container my-5">
   <div class="d-flex flex-column justify-content-center col-12 select-category">
-    <h2 class="text-center">Select a category to discover.</h2>
+    <h2 class="text-center">Select a category to discover:</h2>
     <div
       class="col-12 d-flex flex-wrap justify-content-center align-items-center my-4"
     >
       <div
-        class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        class="category adventure col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
         style="cursor: pointer;"
         onclick="window.location='/api/location/1';"
       >
         <li class="m-0"> Adventure </li></div>
       <div
-        class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        class="category entertainment col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
         style="cursor: pointer;"
         onclick="window.location='/api/location/2';"
       >
         <li class="m-0"> Entertainment </li></div>
       <div
-        class="category col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
+        class="category dining col-10 col-sm-10 col-md-3 d-flex justify-content-center align-items-center mx-3 my-2"
         style="cursor: pointer;"
         onclick="window.location='/api/location/3';"
       >
@@ -124,3 +149,4 @@
     </ul> }}
   </div>
 </div>
+<script src="/js/homepage.js"></script>

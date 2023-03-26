@@ -1,5 +1,10 @@
+
+
+
+
 <div class="container-fluid text-center bg-primary p-0 location-header">
-  <img src="/images/{{filename}}" alt="..." />
+  <img class="img-responsive center-block" src="/images/{{location.filename}}" alt="..." />
+ 
 </div>
 <div class="d-flex justify-content-end rate-experience-btn">
 
@@ -27,18 +32,18 @@
         <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
         <button
           type="button"
-          class="close"
+          class="btn-close"
           data-dismiss="modal"
           aria-label="Close"
         >
-          <span aria-hidden="true">&times;</span>
+          
         </button>
       </div>
       <div class="modal-body">
         <div class="form-floating">
           <input
             type="reviewTitle"
-            class="form-control form-control-white"
+            class="form-control form-control-white text-dark"
             id="reviewTitle"
             placeholder="title of your review"
           />
@@ -47,59 +52,62 @@
         <div class="form-floating">
           <textarea
             type="reviewText"
-            class="form-control form-control-white"
+            class="form-control form-control-white text-dark"
             id="reviewText"
             placeholder="your review text"
           ></textarea>
-          <label class="dark" for="floatingPassword">review text</label>
+          <label class="text-dark" for="floatingPassword">review text</label>
         </div>
 
         <div class="container-fluid reviewForm">
           <div class="input-group mb-3"></div>
 
-          {{!-- <script src="https://lemonadejs.net/v2/lemonade.js"></script>
+          <script src="https://lemonadejs.net/v2/lemonade.js"></script>
           <div id="root"></div>
-          <script>
-            var Rating = function () { var self = {}; // Five stars self.stars =
-            [{}, {}, {}, {}, {}]; // Current clicked star self var current =
-            null; self.click = function (s) { // If the self of the clicked item
-            is not selected reset the null if (!s.selected) { current = null; }
-            // Get the position of the self of the clicked item var index =
-            self.stars.indexOf(s); // Go through all stars and define select or
-            non selected for (var i = 0; i < self.stars.length; i++) { if (i <=
-            index && s !== current) { self.stars[i].selected = 1;
-            self.stars[i].el.style.color = "red"; } else {
-            self.stars[i].selected = 0; self.stars[i].el.style.color = ""; } }
-            // Keep the the self of the last item clicked current = s; let
-            rating = index }; var template = ` <div @loop="self.stars"
-            style="cursor: pointer"> <i class="material-icons"
-            onclick="self.parent.click(self)">{{self.selected
-              ?
-              "star"
-              :
-              "star_outline"
-            }}</i> </div>`; console.log(template); return
-            lemonade.element(template, self); }; lemonade.render(Rating,
-            document.getElementById("root"));
-          </script> --}}
+          <script src="/js/rating.js"></script>
+ 
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" id="saveBtn" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
+
+
+  <div id="starIndex"></div>
+
+
+
+
+
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
     <h1>{{location.name}}</h1>
+   
+
+   {{!-- <div class="test">
+    <div class="show all ratings">
+      {{#each reviews as |review|}}
+
+      <p>{{#calculateAverageRating review.rating}}</p>
+      {{/calculateAverageRating}}
+      {{/each}}
+    </div>
+   
+   </div> --}}
+
+
     <p>
       {{location.address}}
     </p>
+
+
     <p>{{location.description}}</p>
   </div>
   <div class="col-md-2">
@@ -114,6 +122,7 @@
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
+
       {{#each reviews as |review|}}
         <div class="card col-12 col-lg-5 m-4">
           {{! <img src="..." class="card-img-top" alt="..." /> }}
@@ -132,13 +141,17 @@
 
               </div>
             </div>
-
+            
             <h2 class="card-title text-center my-3">{{review.title}}</h2>
-            <div class="stars text-center my-4"><span
-                class="material-symbols-outlined stars-icons"
-              >
-                star star star star
-              </span></div>
+            
+              <div class="stars text-center"><span
+                class="material-symbols-rounded stars-icons star-fill">
+                {{review.filledStars}}</span>
+              <span class="stars-empty material-symbols-rounded stars-icons">
+                {{review.emptyStars}}</span>
+            </div>
+
+            
             <p class="card-text text-center">"{{review.text}}"</p>
 
           </div>
@@ -149,5 +162,7 @@
     </div>
   </div>
 </div>
+
+
 
 <script src="/js/review.js"></script>
