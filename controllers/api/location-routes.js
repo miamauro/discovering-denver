@@ -81,10 +81,12 @@ router.get("/one/:id", async (req, res) => {
       ],
     });
     const location = locationData.get({ plain: true });
-    const reviews = reviewData.map((review) => review.get({ plain: true }));
-    console.log(location);
-    console.log(reviewData);
-    console.log(reviews);
+    const reviews = reviewData.map((review) => {
+      const tempReview = review.get({ plain: true });
+      tempReview.filledStars = "star ".repeat(tempReview.rating);
+      tempReview.emptyStars = "star ".repeat(5 - tempReview.rating);
+      return tempReview;
+    });
     req.session.save(() => {
       req.session.location_id = location.location_id;
       res.status(200).render("locations", { location, reviews });
