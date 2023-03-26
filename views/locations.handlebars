@@ -1,8 +1,10 @@
 
 
 
+
 <div class="container-fluid text-center bg-primary p-0 location-header">
-  <img src="/images/{{filename}}" alt="..." />
+  <img class="img-responsive center-block" src="/images/{{location.filename}}" alt="..." />
+ 
 </div>
 <div class="d-flex justify-content-end rate-experience-btn">
 
@@ -30,11 +32,11 @@
         <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
         <button
           type="button"
-          class="close"
+          class="btn-close"
           data-dismiss="modal"
           aria-label="Close"
         >
-          <span aria-hidden="true">&times;</span>
+          
         </button>
       </div>
       <div class="modal-body">
@@ -80,11 +82,7 @@
 
   <div id="starIndex"></div>
 
-{{!-- <div class="rating list">
-  {{#each review as |review|}}
-<p>{{location.name}}</p>
-{{/each}}
-</div> --}}
+
 
 
 
@@ -93,14 +91,16 @@
     <h1>{{location.name}}</h1>
    
 
-   <div class="test">
+   {{!-- <div class="test">
     <div class="show all ratings">
       {{#each reviews as |review|}}
-      <p>{{review.rating}}</p>
+
+      <p>{{#calculateAverageRating review.rating}}</p>
+      {{/calculateAverageRating}}
       {{/each}}
     </div>
    
-   </div>
+   </div> --}}
 
 
     <p>
@@ -162,5 +162,7 @@
     </div>
   </div>
 </div>
+
+
 
 <script src="/js/review.js"></script>
