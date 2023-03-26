@@ -16,7 +16,7 @@ const locationData = [
   {
     name: "Denver Botanical Gardens",
     address: "1007 York St, Denver, CO 80206",
-    filename: "03-botanic-gardens.jpeg",
+    filename: "03-botanical-gardens.jpeg",
     category_id: 1,
   },
   {
@@ -78,27 +78,6 @@ const locationData = [
     description: "Baseball themed square next to the Colorado Rockies stadium",
     filename: "12-mcgregorsquare.jpg",
     category_id: 2,
-  },
-  {
-    name: "The Original Chipotle",
-    address: "1644 E Evans Ave, Denver, CO 80210",
-    description: "The first Chipotle",
-    filename: "13-original chipotle.jpeg",
-    category_id: 3,
-  },
-  {
-    name: "Agave Taco Bar",
-    address: "2217 E Mississippi Ave, Denver, CO 80210",
-    description: "Tacos and Margaritas",
-    filename: "14-agave-tac-obar.jpeg",
-    category_id: 3,
-  },
-  {
-    name: "Bang Up To The Elephant!",
-    address: "1310 Pearl St, Denver, CO 80203",
-    description: "Carribean-inspired dishes in a fun atmosphere",
-    filename: "bang-up-to-the-elephant-int04.jpg",
-    category_id: 3,
   },
 ];
 

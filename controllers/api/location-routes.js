@@ -31,65 +31,33 @@ router.get("/:category", async (req, res) => {
 });
 
 //Get specific location information and associated review data
-// router.get("/one/:id", async (req, res) => {
-//   try {
-//     const locationData = await Location.findOne({
-//       where: { location_id: req.params.id },
-//       include: [
-//         {
-//           model: Review,
-//           attributes: ["title", "text", "rating"],
-//         },
-//       ],
-//     });
-//     if (!locationData) {
-//       res.status(404).redirect("/");
-//       return;
-//     }
-//     const location = locationData.get({ plain: true });
-//     req.session.save(() => {
-//       req.session.location_id = location.location_id;
-//       res.status(200).render("locations", {
-//         location,
-//         loggedIn: req.session.loggedIn,
-//       });
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).redirect("/");
-//   }
-// });
-
-module.exports = router;
-
 router.get("/one/:id", async (req, res) => {
   try {
     const locationData = await Location.findOne({
       where: { location_id: req.params.id },
+      include: [
+        {
+          model: Review,
+          attributes: ["title", "text", "rating"],
+        },
+      ],
     });
     if (!locationData) {
       res.status(404).redirect("/");
       return;
     }
-    const reviewData = await Review.findAll({
-      where: { location_id: req.params.id },
-      include: [
-        {
-          model: User,
-          attributes: ["user_id", "username"],
-        },
-      ],
-    });
     const location = locationData.get({ plain: true });
-    const reviews = reviewData.map((review) => review.get({ plain: true }));
-    console.log(location);
-    console.log(reviewData);
-    console.log(reviews);
     req.session.save(() => {
       req.session.location_id = location.location_id;
-      res.status(200).render("locations", { location, reviews });
+      res.status(200).render("locations", {
+        location,
+        loggedIn: req.session.loggedIn,
+      });
     });
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    res.status(500).redirect("/");
   }
 });
+
+module.exports = router;

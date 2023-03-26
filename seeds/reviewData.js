@@ -39,14 +39,14 @@ const reviewData = [
   {
     title: "test review numero dos",
     text: "Just some placeholder test text",
-    rating: 5,
+    rating: 3,
     location_id: 1,
     user_id: 3,
   },
   {
     title: "test review, part 3",
     text: "Can I display multiple reviews on one location? Lets find out!",
-    rating: 1,
+    rating: 3,
     location_id: 1,
     user_id: 4,
   },

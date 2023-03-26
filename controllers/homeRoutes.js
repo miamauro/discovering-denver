@@ -15,20 +15,15 @@ router.get("/", async (req, res) => {
       },
       {
         model: Location,
-        attributes: ["name", "location_id"],
+        attributes: ["name"],
       },
     ],
   }).catch((err) => {
     res.json(err);
   });
-
   const twoReviews = reviewData.slice(reviewData.length - 2);
-  const reviews = twoReviews.map((review) => {
-    const tempReview = review.get({ plain: true });
-    tempReview.filledStars = "star ".repeat(tempReview.rating);
-    tempReview.emptyStars = "star ".repeat(5 - tempReview.rating);
-    return tempReview;
-  });
+  const reviews = twoReviews.map((review) => review.get({ plain: true }));
+  // console.log(reviews);
 
   res.render("homepage", { reviews, loggedIn: req.session.loggedIn });
 });

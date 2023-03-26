@@ -18,21 +18,11 @@
     class="container d-flex flex-row flex-wrap justify-content-center col-10"
   >
     {{#each locations as |location|}}
-
       <div class="card col-lg-3 m-2">
-        <div class="overflow-hidden" style="height:215px">
-          <img
-            class="card-img-top"
-            src="/images/{{location.filename}}"
-            alt=""
-          />
-        </div>
-        <div
-          class="card-body d-flex flex-column align-items-stretch justify-content-between"
-        >
-          <h5 class="card-title text-center">{{location.name}}</h5>
-          <h6 class="text-center">{{location.address}}</h6>
-          <p class="card-text text-center">{{location.description}}</p>
+        <div class="card-body">
+          <h5 class="card-title">{{location.name}}</h5>
+          <h6>{{location.address}}</h6>
+          <p class="card-text">{{location.description}}</p>
           <a
             href="/api/location/one/{{location.location_id}}"
             class="btn btn-primary"
