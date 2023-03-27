@@ -1,3 +1,4 @@
+
 <div class="container-fluid text-center bg-primary p-0 location-header">
   <img
     class="img-responsive center-block"
@@ -6,6 +7,7 @@
   />
 
 </div>
+
 <div class="d-flex justify-content-end rate-experience-btn">
 
   <button
@@ -18,6 +20,8 @@
   </button>
 </div>
 
+
+{{!-- {{#if loggedIn}} --}}
 <div
   class="modal fade"
   id="Modal"
@@ -85,22 +89,78 @@
   </div>
 </div>
 
-<div id="starIndex"></div>
+{{!-- {{else}}
+  <div
+  class="modal fade"
+  id="Modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login to write a new review</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating">
+          <input
+            type="reviewTitle"
+            class="form-control form-control-white text-dark"
+            id="reviewTitle"
+            placeholder="title of your review"
+          />
+      
+        
+
+         
+ 
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}} --}}
+
+
+
+  <div id="starIndex"></div>
+
+
+
+
 
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
     <h1>{{location.name}}</h1>
 
-    {{!-- <div class="test">
-    <div class="show all ratings">
-      {{#each reviews as |review|}}
 
-      <p>{{#calculateAverageRating review.rating}}</p>
-      {{/calculateAverageRating}}
-      {{/each}}
-    </div>
+    <div >
+      
+          <p>Average Rating: {{#calculateAverageRating reviews}}</p>
+            {{/calculateAverageRating}}
+        <span class="material-symbols-rounded star-fill">
+star
+</span>
+   </div>
+
    
-   </div> --}}
+ 
 
     <p>
       {{location.address}}
