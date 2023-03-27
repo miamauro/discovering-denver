@@ -1,3 +1,4 @@
+
 <div class="container-fluid text-center bg-primary p-0 location-header">
   <img
     class="img-responsive center-block"
@@ -145,16 +146,18 @@
   <div class="col-md-10">
     <h1>{{location.name}}</h1>
 
-    {{!-- <div class="test">
-    <div class="show all ratings">
-      {{#each reviews as |review|}}
-      <p>{{review.rating}}</p>
-      <p>{{#calculateAverageRating review.rating}}</p>
-      {{/calculateAverageRating}}
-      {{/each}} --}}
+
+    <div >
+      
+          <p>Average Rating: {{#calculateAverageRating reviews}}</p>
+            {{/calculateAverageRating}}
+        <span class="material-symbols-rounded star-fill">
+star
+</span>
+   </div>
 
    
-   </div>
+ 
 
     <p>
       {{location.address}}

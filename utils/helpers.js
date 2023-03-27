@@ -1,16 +1,20 @@
 module.exports = {
-  calculateAverageRating: (rating) => {
+  calculateAverageRating: (reviewArr) => {
     let ratingArr = [];
-    let ratingLength = ratingArr.length;
-    forEach((rating) => {
-      ratingArr.push(rating);
-      arrSum = ratingArr.reduce(function (a, b) {
+
+    reviewArr.forEach((review) => {
+      ratingArr.push(review.rating);
+      const arrSum = ratingArr.reduce(function (a, b) {
         return a + b;
       });
+      let ratingLength = ratingArr.length;
       averageRating = arrSum / ratingLength;
-
-      return averageRating;
     });
-    return ratingLength;
+
+    console.log("////////////////////////////////");
+    console.log(ratingArr);
+    console.log(averageRating);
+    // return ratingLength;
+    return averageRating;
   },
 };
