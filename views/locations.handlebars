@@ -21,7 +21,7 @@
 </div>
 
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 <div
   class="modal fade"
   id="Modal"
@@ -89,7 +89,7 @@
   </div>
 </div>
 
-{{!-- {{else}}
+{{else}}
   <div
   class="modal fade"
   id="Modal"
@@ -135,7 +135,7 @@
     </div>
   </div>
 </div>
-{{/if}} --}}
+{{/if}}
 
 
 
@@ -150,14 +150,6 @@
     <h1>{{location.name}}</h1>
 
 
-    <div >
-      
-          <p>Average Rating: {{#calculateAverageRating reviews}}</p>
-            {{/calculateAverageRating}}
-        <span class="material-symbols-rounded star-fill">
-star
-</span>
-   </div>
 
    
  
@@ -165,8 +157,12 @@ star
     <p>
       {{location.address}}
     </p>
-
+<div class="aveReview d-flex">
     <p>{{location.description}} Average Review: {{averageReview}}</p>
+      <span class="material-symbols-rounded star-fill">
+star
+</span>
+</div>
   </div>
   <div class="col-md-2">
     <div class="border border-1 col-8">
