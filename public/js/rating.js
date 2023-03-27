@@ -13,7 +13,7 @@ var Rating = function () {
     for (var i = 0; i < self.stars.length; i++) {
       if (i <= index && s !== current) {
         self.stars[i].selected = 1;
-        self.stars[i].el.style.color = "red";
+        self.stars[i].el.style.color = "#ff3939";
       } else {
         self.stars[i].selected = 0;
         self.stars[i].el.style.color = "";
@@ -29,7 +29,7 @@ var Rating = function () {
   };
 
   var template = ` <div @loop="self.stars" style="cursor: pointer"> 
-      <i class="material-icons"
+      <i class="material-icons stars-icons"
         onclick="self.parent.click(self)">{{self.selected ? "star" : "star_outline"}}</i> </div>`;
 
   return lemonade.element(template, self);
