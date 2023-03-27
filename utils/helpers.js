@@ -1,20 +1,20 @@
-// // const calculateAverageRating = (rating) => {
-// //   let ratingArr = [];
-// //   ratingArr.push(rating);
-// //   forEach(calculateAverageRating(rating));
-// //   console.log(ratingArr);
-// //   return ratingArr;
-// // };
+module.exports = {
+  calculateAverageRating: (reviewArr) => {
+    let ratingArr = [];
 
-// const { options } = require("../controllers");
+    reviewArr.forEach((review) => {
+      ratingArr.push(review.rating);
+      const arrSum = ratingArr.reduce(function (a, b) {
+        return a + b;
+      });
+      let ratingLength = ratingArr.length;
+      averageRating = arrSum / ratingLength;
+    });
 
-// module.exports = {
-//   calculateAverageRating: (rating) => {
-//     console.log("test");
-//     let ratingArr = rating + 10;
-//     // ratingArr.push(rating);
-//     // forEach(calculateAverageRating(rating));
-//     // console.log(ratingArr);
-//     return ratingArr;
-//   },
-// };
+    console.log("////////////////////////////////");
+    console.log(ratingArr);
+    console.log(averageRating);
+    // return ratingLength;
+    return averageRating;
+  },
+};

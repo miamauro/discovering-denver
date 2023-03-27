@@ -21,6 +21,21 @@ const userData = [
     email: "plantlover@aol.com",
     password: "garden87",
   },
+  {
+    username: "realestateguy",
+    email: "buymyhouse@aol.com",
+    password: "mortgage42",
+  },
+  {
+    username: "supermom",
+    email: "supermom@aol.com",
+    password: "twins87",
+  },
+  {
+    username: "grumpyphil",
+    email: "grumpypants@aol.com",
+    password: "garden87",
+  },
 ];
 
 const seedUser = () => User.bulkCreate(userData);
