@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+require("dotenv").config();
 
 const routes = require("./controllers/index");
 const sequelize = require("./config/connection");
@@ -12,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: "Super secret secret",
+  secret: DB_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
