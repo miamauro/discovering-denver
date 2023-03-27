@@ -18,8 +18,26 @@ router.get("/", async (req, res) => {
       res.status(404).json({ message: "user not found" });
       return;
     }
+    const reviewData = await Review.findAll({
+      where: { user_id: req.session.user_id },
+      include: [
+        {
+          model: User,
+          attributes: ["user_id", "username"],
+        },
+      ],
+    });
+    const reviews = reviewData.map((review) => {
+      const tempReview = review.get({ plain: true });
+      tempReview.filledStars = "star ".repeat(tempReview.rating);
+      tempReview.emptyStars = "star ".repeat(5 - tempReview.rating);
+      return tempReview;
+    });
     const user = userData.get({ plain: true });
-    res.status(200).json(user);
+    console.log(user);
+    res
+      .status(200)
+      .render("user", { user, loggedIn: req.session.loggedIn, reviews });
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");

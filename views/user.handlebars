@@ -1,0 +1,175 @@
+<div class="container-fluid text-center bg-primary p-0 location-header">
+  <img
+    class="img-responsive center-block"
+    src="/images/{{location.filename}}"
+    alt="..."
+  />
+
+</div>
+
+<div id="starIndex"></div>
+
+<div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
+  <div class="col-md-10">
+    <h1>{{user.username}}</h1>
+
+    <p>
+      {{user.email}}
+    </p>
+
+    <p>proof of concept</p>
+  </div>
+  <div class="col-md-2">
+    <div class="border border-1 col-8">
+    </div>
+  </div>
+</div>
+<div class="container col-12 latest-reviews">
+  <div class="d-flex justify-content-between mb-3">
+    <h3>Reviews</h3>
+  </div>
+  <div class="container">
+    <div class="d-flex flex-wrap flex-column justify-content-start col-12">
+
+      {{#each reviews as |review|}}
+        <div class="card col-12 col-lg-10 mb-3">
+          {{! <img src="..." class="card-img-top" alt="..." /> }}
+          <div
+            class="card-body d-flex flex-column flex-wrap justify-content-center align-items-stretch"
+          >
+            <div class="d-flex">
+              <div class="col-md-1 text-center me-2">
+                <img
+                  src="/images/user-img.png"
+                  class="rounded-circle user-img"
+                />
+              </div>
+              <div class="">
+                <h6>{{user.username}}</h6>
+
+              </div>
+            </div>
+            <div class="d-flex mt-2">
+              <div class="col-9 d-flex mt-2">
+                <h4 class="card-title text-start mb-2">{{review.title}}</h4>
+              </div>
+              <div class="stars col-2 text-center d-none d-sm-block"><span
+                  class="material-symbols-rounded stars-icons-2 star-fill"
+                >
+                  {{review.filledStars}}</span>
+                <span
+                  class="stars-empty material-symbols-rounded stars-icons-2"
+                >
+                  {{review.emptyStars}}</span>
+              </div>
+              <div class="stars col-2 text-center d-flex d-sm-none"><span
+                  class="material-symbols-rounded stars-icons-2 star-fill"
+                >
+                  star</span><h4 class="ms-3">{{review.rating}}</h4>
+
+              </div>
+
+            </div>
+            <p class="card-text text-start">"{{review.text}}"</p>
+          </div>
+          <div class="d-flex justify-content-end rate-experience-btn">
+
+            <button
+              type="button"
+              class="btn btn-primary px-4 mt-5"
+              data-toggle="modal"
+              data-target="#Modal"
+            >
+              Update Review
+            </button>
+          </div>
+
+          {{!-- {{#if loggedIn}} --}}
+          <div
+            class="modal fade"
+            id="Modal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="ModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Update Review</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-floating mb-4">
+                    <input
+                      type="reviewTitle"
+                      class="form-control form-control-white text-dark"
+                      id="reviewTitle"
+                      placeholder="title of your review"
+                    />
+                    <label
+                      class="text-dark"
+                      for="floatingInput"
+                    >{{review.title}}</label>
+                  </div>
+                  <div class="container-fluid reviewForm mb-4">
+                    <label
+                      class="text-dark"
+                      for="floatingPassword"
+                    >Rating:</label>
+                    <div class="input-group mb-3"></div>
+
+                    <script
+                      src="https://lemonadejs.net/v2/lemonade.js"
+                    ></script>
+                    <div id="root" class="mx-auto text-center col-10"></div>
+                    <script src="/js/rating.js"></script>
+
+                  </div>
+                  <label class="text-dark" for="floatingPassword">Tell us about
+                    your experience:</label>
+                  <div class="form-floating">
+                    <textarea
+                      type="reviewText"
+                      class="form-control form-control-white text-dark"
+                      id="reviewText"
+                      placeholder="your review text"
+                    >{{review.text}}</textarea>
+
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    id="saveBtn"
+                    class="btn btn-primary"
+                  >Share</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/review.js"></script>
