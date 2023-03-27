@@ -1,10 +1,10 @@
-
-
-
-
 <div class="container-fluid text-center bg-primary p-0 location-header">
-  <img class="img-responsive center-block" src="/images/{{location.filename}}" alt="..." />
- 
+  <img
+    class="img-responsive center-block"
+    src="/images/{{location.filename}}"
+    alt="..."
+  />
+
 </div>
 <div class="d-flex justify-content-end rate-experience-btn">
 
@@ -36,7 +36,7 @@
           data-dismiss="modal"
           aria-label="Close"
         >
-          
+
         </button>
       </div>
       <div class="modal-body">
@@ -65,33 +65,26 @@
           <script src="https://lemonadejs.net/v2/lemonade.js"></script>
           <div id="root"></div>
           <script src="/js/rating.js"></script>
- 
+
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
+          Cancel
         </button>
-        <button type="button" id="saveBtn" class="btn btn-primary">Save changes</button>
+        <button type="button" id="saveBtn" class="btn btn-primary">Post</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-  <div id="starIndex"></div>
-
-
-
-
+<div id="starIndex"></div>
 
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
   <div class="col-md-10">
     <h1>{{location.name}}</h1>
-   
 
-   {{!-- <div class="test">
+    {{!-- <div class="test">
     <div class="show all ratings">
       {{#each reviews as |review|}}
 
@@ -102,11 +95,9 @@
    
    </div> --}}
 
-
     <p>
       {{location.address}}
     </p>
-
 
     <p>{{location.description}}</p>
   </div>
@@ -118,7 +109,6 @@
 <div class="container col-10 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
     <h3>Latest Reviews</h3>
-    <a href="" class="seeall"><p>See All</p></a>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap justify-content-center col-12">
@@ -141,17 +131,17 @@
 
               </div>
             </div>
-            
+
             <h2 class="card-title text-center my-3">{{review.title}}</h2>
-            
-              <div class="stars text-center"><span
-                class="material-symbols-rounded stars-icons star-fill">
+
+            <div class="stars text-center"><span
+                class="material-symbols-rounded stars-icons star-fill"
+              >
                 {{review.filledStars}}</span>
               <span class="stars-empty material-symbols-rounded stars-icons">
                 {{review.emptyStars}}</span>
             </div>
 
-            
             <p class="card-text text-center">"{{review.text}}"</p>
 
           </div>
@@ -162,7 +152,5 @@
     </div>
   </div>
 </div>
-
-
 
 <script src="/js/review.js"></script>
