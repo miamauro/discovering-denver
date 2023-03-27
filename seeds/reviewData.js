@@ -44,11 +44,39 @@ const reviewData = [
     user_id: 3,
   },
   {
+    title: "Favorite place to see a movie",
+    text: "Such a cool old building.",
+    rating: 4,
+    location_id: 4,
+    user_id: 6,
+  },
+  {
+    title: "Favorite indoor mucis venue",
+    text: "I saw Taylor Swift there and had a great time!",
+    rating: 4,
+    location_id: 5,
+    user_id: 7,
+  },
+  {
+    title: "A bizzare, but enjoyable experiance",
+    text: "It sure was a unique experiance!",
+    rating: 4,
+    location_id: 17,
+    user_id: 5,
+  },
+  {
+    title: "Favorite spot for coffee",
+    text: "Love how quiet it is. Great place to read a book!",
+    rating: 4,
+    location_id: 7,
+    user_id: 6,
+  },
+  {
     title: "The elephants were sleeping..",
     text: "We drove 3 hours to see the elephants just to find out they were sleeping! Unfortunately the zoo would not give my money back.",
     rating: 1,
     location_id: 11,
-    user_id: 4,
+    user_id: 7,
   },
 ];
 
