@@ -13,6 +13,8 @@ Discovering Denver is a full-stack application allowing users to learn more abou
 - dotenv
 - Lemonade
 - Handlebars.js
+- Bootstrap
+- Google Fonts
 
 ## Collaboration
 
