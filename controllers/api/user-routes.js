@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
       return;
     }
     const user = userData.get({ plain: true });
-    res.status(200).json(user);
+    res.status(200).render("user", user);
   } catch (err) {
     console.log(err);
     res.status(500).redirect("/");
