@@ -100,6 +100,27 @@ const locationData = [
     filename: "bang-up-to-the-elephant-int04.jpg",
     category_id: 3,
   },
+  {
+    name: "Elitch Gardens",
+    address: "2000 Elitch Cir, Denver, CO 80204",
+    description: "Amusement Park",
+    filename: "15 - Elitchs.jpeg",
+    category_id: 1,
+  },
+  {
+    name: "Meow Wolf Denver",
+    address: "1338 1st St, Denver, CO 80204",
+    description: "Surreal, walk-through art experience",
+    filename: "16-meowwolf.jpg",
+    category_id: 1,
+  },
+  {
+    name: "Urban Air Trampoline and Adventure Park",
+    address: "9550 E 40th Ave, Denver, CO 80238",
+    description: "Large-scale indoor trampoline center",
+    filename: "UrbanAir.jpg",
+    category_id: 1,
+  },
 ];
 
 const seedLocation = () => Location.bulkCreate(locationData);

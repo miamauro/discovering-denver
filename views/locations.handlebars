@@ -16,7 +16,7 @@
     data-toggle="modal"
     data-target="#Modal"
   >
-    Rate your experience
+    New Review
   </button>
 </div>
 
@@ -54,7 +54,7 @@
           <label class="text-dark" for="floatingInput">Review Title</label>
         </div>
         <div class="container-fluid reviewForm mb-4">
-          <label class="text-dark" for="floatingPassword">What's your rate?</label>
+          <label class="text-dark" for="floatingPassword">Rating:</label>
           <div class="input-group mb-3"></div>
 
           <script src="https://lemonadejs.net/v2/lemonade.js"></script>
@@ -63,7 +63,7 @@
 
         </div>
         <label class="text-dark" for="floatingPassword">Tell us about your
-          experience</label>
+          experience:</label>
         <div class="form-floating">
           <textarea
             type="reviewText"
@@ -79,8 +79,11 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Cancel
         </button>
-        <button type="button" id="saveBtn" class="btn btn-primary">Share your
-          experience</button>
+        <button
+          type="button"
+          id="saveBtn"
+          class="btn btn-primary"
+        >Share</button>
       </div>
     </div>
   </div>
@@ -163,7 +166,7 @@ star
       {{location.address}}
     </p>
 
-    <p>{{location.description}}</p>
+    <p>{{location.description}} Average Review: {{averageReview}}</p>
   </div>
   <div class="col-md-2">
     <div class="border border-1 col-8">
@@ -172,7 +175,7 @@ star
 </div>
 <div class="container col-12 latest-reviews">
   <div class="d-flex justify-content-between mb-3">
-    <h3>Reviews and ratings</h3>
+    <h3>Reviews</h3>
   </div>
   <div class="container">
     <div class="d-flex flex-wrap flex-column justify-content-start col-12">

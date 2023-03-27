@@ -85,21 +85,44 @@
 
     <nav class="fixed-top navbar-bg d-none d-sm-flex">
       <a class="logo" href="/">Discovering Denver</a>
-      <ul class="mb-0">
+      <div class="d-flex align-items-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary-2 dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Categories
+          </button>
+          <ul class="dropdown-menu">
+            <li><a
+                class="dropdown-item"
+                href="/api/location/1"
+              >Adventure</a></li>
+            <li><a
+                class="dropdown-item"
+                href="/api/location/2"
+              >Entertainment</a></li>
+            <li><a class="dropdown-item" href="/api/location/3">Dining</a></li>
+          </ul>
+        </div>
+        <ul class="mb-0">
 
-        {{#if loggedIn}}
-          <li class=""><a id="logout" class="logout">Sign Out
-              <span class="material-symbols-outlined"> logout </span></a></li>
-        {{else}}
-          {{! <li class="nav-link"><a href="/login">Login</a></li>
+          {{#if loggedIn}}
+            <li class=""><a id="logout" class="logout">Sign Out
+                <span class="material-symbols-outlined"> logout </span></a></li>
+          {{else}}
+            {{! <li class="nav-link"><a href="/login">Login</a></li>
           }}
-          <li>
-            <a class="signup" href="/login">Sign In
-              <span class="material-symbols-outlined"> login </span></a>
-          </li>
-        {{/if}}
+            <li>
+              <a class="signup" href="/login">Sign In
+                <span class="material-symbols-outlined"> login </span></a>
+            </li>
+          {{/if}}
 
-      </ul>
+        </ul>
+      </div>
     </nav>
     <nav class="fixed-bottom rounded-top navbar-bg-2 d-flex d-sm-none">
       <a class="logo" href="/"><span class="material-symbols-outlined">
