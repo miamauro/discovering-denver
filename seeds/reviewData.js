@@ -30,7 +30,7 @@ const reviewData = [
     user_id: 4,
   },
   {
-    title: "Bring a rainjacket!",
+    title: "Bring a rain jacket!",
     text: "Fantastic time, but we got soaked! Highly recommend you bring a rain jacket.",
     rating: 3,
     location_id: 1,
@@ -45,7 +45,7 @@ const reviewData = [
   },
   {
     title: "The elephants were sleeping..",
-    text: "We drove 3 hours to see the elephants just to find out they were sleeping! Unfotunately the zoo would not give my money back.",
+    text: "We drove 3 hours to see the elephants just to find out they were sleeping! Unfortunately the zoo would not give my money back.",
     rating: 1,
     location_id: 11,
     user_id: 4,
