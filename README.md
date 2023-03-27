@@ -13,6 +13,8 @@ Discovering Denver is a full-stack application allowing users to learn more abou
 - dotenv
 - Lemonade
 - Handlebars.js
+- Bootstrap
+- Google Fonts
 
 ## Collaboration
 
@@ -23,3 +25,5 @@ This team includes James Geneser, George Harrison, Francisco Gutierrez Rodarte, 
 [Discovering Denver]()
 
 ## Screenshot
+
+![homepage](./public/images/homepage%20screenshot.png)
