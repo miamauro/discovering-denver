@@ -14,6 +14,6 @@ module.exports = {
     console.log(ratingArr);
     console.log(averageRating);
     // return ratingLength;
-    return averageRating;
+    return averageRating.fixed(1);
   },
 };
