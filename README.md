@@ -23,3 +23,5 @@ This team includes James Geneser, George Harrison, Francisco Gutierrez Rodarte, 
 [Discovering Denver]()
 
 ## Screenshot
+
+![homepage](./public/images/homepage%20screenshot.png)
