@@ -102,6 +102,10 @@ a.logo {
   font-size: 315%;
   color: var(--accent-color2);
 }
+.stars-icons-2 {
+  font-size: 175%;
+  color: var(--accent-color2);
+}
 
 .stars-empty {
   margin-left: 6%;
@@ -263,6 +267,11 @@ a.seeall {
   overflow: hidden;
 }
 
+.location-header img {
+  width: -webkit-fill-available;
+  position: relative;
+  bottom: 203%;
+}
 .rate-experience-btn {
   position: relative;
   top: -5rem;
@@ -607,16 +616,31 @@ p.forward {
   margin-top: 5rem;
 }
 
+i {
+  font-size: 3rem !important;
+}
+
+.modal {
+  margin-top: 5rem;
+  --bs-modal-margin: 1.5rem;
+}
+
 @media only screen and (max-width: 1200px) {
   .img-category {
     max-width: 150%;
     height: auto;
+  }
+  .location-header img {
+    bottom: 147%;
   }
 }
 @media only screen and (max-width: 990px) {
   .img-category {
     max-width: 190%;
     height: auto;
+  }
+  .location-header img {
+    bottom: 55%;
   }
 }
 
@@ -627,6 +651,10 @@ p.forward {
 
   .stars-icons {
     font-size: 215%;
+  }
+
+  i {
+    font-size: 2.5rem !important;
   }
 
   #more {
@@ -643,5 +671,11 @@ p.forward {
   .img-category {
     max-width: 225%;
     height: auto;
+  }
+
+  .location-header img {
+    bottom: 0;
+    width: 165%;
+    left: -60px;
   }
 }
