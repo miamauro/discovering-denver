@@ -88,7 +88,7 @@
       <div class="d-flex align-items-center">
         <div class="dropdown">
           <button
-            class="btn btn-secondary-2 dropdown-toggle"
+            class="btn btn-secondary-2 py-2 dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -129,21 +129,24 @@
       <a class="logo" href="/"><span class="material-symbols-outlined">
           home
         </span></a>
-      <ul class="mb-0">
+      <a class="" href="/#category-section"><span
+          class="material-symbols-outlined"
+        >
+          category
+        </span></a>
 
-        {{#if loggedIn}}
-          <li class=""><a id="logout" class="logout">
-              <span class="material-symbols-outlined"> logout </span></a></li>
-        {{else}}
-          {{! <li class="nav-link"><a href="/login">Login</a></li>
+      {{#if loggedIn}}
+        <a id="logout" class="logout">
+          <span class="material-symbols-outlined"> logout </span></a>
+      {{else}}
+        {{! <li class="nav-link"><a href="/login">Login</a></li>
           }}
-          <li>
-            <a class="signup" href="/login">
-              <span class="material-symbols-outlined"> login </span></a>
-          </li>
-        {{/if}}
 
-      </ul>
+        <a class="signup" href="/login">
+          <span class="material-symbols-outlined"> login </span></a>
+
+      {{/if}}
+
     </nav>
     <div class="margin-top">
       <main>{{{body}}}</main>
