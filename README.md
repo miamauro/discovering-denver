@@ -24,14 +24,16 @@ This team includes James Geneser, George Harrison, Francisco Gutierrez Rodarte, 
 
 [Discovering Denver](https://whispering-dawn-72162.herokuapp.com/)
 
-## Screenshot
+## Screenshots
+
+Homepage
 
 ![homepage](./public/images/homepage%20screenshot.png)
+
+SQL Table Structure
 
 ![SQL-Tables](./public/images/SQL-Tables.png)
 
 ## Links
 
-[Github Repo](https://github.com/miamauro/discovering-denver)
-
-[Presentation]()
+[Presentation](https://www.figma.com/proto/ELhiX5QsjItcPCrDHaR6sv/Discovering-Denver-Presentation?node-id=1-2&scaling=contain&page-id=0%3A1&starting-point-node-id=1%3A2)
