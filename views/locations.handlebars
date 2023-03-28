@@ -1,4 +1,3 @@
-
 <div class="container-fluid text-center bg-primary p-0 location-header">
   <img
     class="img-responsive center-block"
@@ -12,7 +11,7 @@
 
   <button
     type="button"
-    class="btn btn-primary px-4"
+    class="btn btn-primary px-4 letsgo"
     data-toggle="modal"
     data-target="#Modal"
   >
@@ -20,156 +19,143 @@
   </button>
 </div>
 
-
 {{#if loggedIn}}
-<div
-  class="modal fade"
-  id="Modal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="ModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+  <div
+    class="modal fade"
+    id="Modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="ModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Review</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
 
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating mb-4">
-          <input
-            type="reviewTitle"
-            class="form-control form-control-white text-dark"
-            id="reviewTitle"
-            placeholder="title of your review"
-          />
-          <label class="text-dark" for="floatingInput">Review Title</label>
+          </button>
         </div>
-        <div class="container-fluid reviewForm mb-4">
-          <label class="text-dark" for="floatingPassword">Rating:</label>
-          <div class="input-group mb-3"></div>
+        <div class="modal-body">
+          <div class="form-floating mb-4">
+            <input
+              type="reviewTitle"
+              class="form-control form-control-white text-dark"
+              id="reviewTitle"
+              placeholder="title of your review"
+            />
+            <label class="text-dark" for="floatingInput">Review Title</label>
+          </div>
+          <div class="container-fluid reviewForm mb-4">
+            <label class="text-dark" for="floatingPassword">Rating:</label>
+            <div class="input-group mb-3"></div>
 
-          <script src="https://lemonadejs.net/v2/lemonade.js"></script>
-          <div id="root" class="mx-auto text-center col-10"></div>
-          <script src="/js/rating.js"></script>
+            <script src="https://lemonadejs.net/v2/lemonade.js"></script>
+            <div id="root" class="mx-auto text-center col-10"></div>
+            <script src="/js/rating.js"></script>
+
+          </div>
+          <label class="text-dark" for="floatingPassword">Tell us about your
+            experience:</label>
+          <div class="form-floating">
+            <textarea
+              type="reviewText"
+              class="form-control form-control-white text-dark"
+              id="reviewText"
+              placeholder="your review text"
+            ></textarea>
+
+          </div>
 
         </div>
-        <label class="text-dark" for="floatingPassword">Tell us about your
-          experience:</label>
-        <div class="form-floating">
-          <textarea
-            type="reviewText"
-            class="form-control form-control-white text-dark"
-            id="reviewText"
-            placeholder="your review text"
-          ></textarea>
-
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancel
+          </button>
+          <button
+            type="button"
+            id="saveBtn"
+            class="btn btn-primary"
+          >Share</button>
         </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Cancel
-        </button>
-        <button
-          type="button"
-          id="saveBtn"
-          class="btn btn-primary"
-        >Share</button>
       </div>
     </div>
   </div>
-</div>
 
 {{else}}
   <div
-  class="modal fade"
-  id="Modal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="ModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login to write a new review</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-floating">
-          <input
-            type="reviewTitle"
-            class="form-control form-control-white text-dark"
-            id="reviewTitle"
-            placeholder="title of your review"
-          />
-      
-        
+    class="modal fade"
+    id="Modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="ModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title warning" id="exampleModalLabel">Sign in to
+            write a new review</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
 
-         
- 
+          </button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
-        
+        {{! <div class="modal-body">
+          <div class="form-floating">
+            <input
+              type="reviewTitle"
+              class="form-control form-control-white text-dark"
+              id="reviewTitle"
+              placeholder="title of your review"
+            />
+
+          </div>
+        </div> }}
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+
+        </div>
       </div>
     </div>
   </div>
-</div>
 {{/if}}
 
-
-
-  <div id="starIndex"></div>
-
-
-
-
+<div id="starIndex"></div>
 
 <div class="container d-flex flex-wrap justify-content-center col-md-10 my-5">
-  <div class="col-md-10">
+  <div class="col-md-8">
     <h1>{{location.name}}</h1>
-
-
-
-   
- 
 
     <p>
       {{location.address}}
     </p>
-      <p>{{location.description}} </p>
-<div class="aveReview d-flex">
-  
-    <br>
-    <p>Average Review: {{averageReview}}</p>
-      <span class="material-symbols-rounded star-fill">
-star
-</span>
-</div>
+    <p>{{location.description}} </p>
+
   </div>
-  <div class="col-md-2">
-    <div class="border border-1 col-8">
+  <div class="col-md-4">
+
+    <div class="aveReview d-flex flex-column align-items-center">
+
+      <p class="mb-2">Average Review: </p>
+      <div class="d-flex ms-2 py-2 align-items-center average-rate">
+        <h5 class="ms-2 mb-0">{{averageReview}}</h5>
+        <span class="material-symbols-rounded star-fill stars-icons-2">
+          star
+        </span></div>
     </div>
+
   </div>
 </div>
 <div class="container col-12 latest-reviews">
