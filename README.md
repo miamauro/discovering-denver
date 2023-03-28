@@ -27,3 +27,11 @@ This team includes James Geneser, George Harrison, Francisco Gutierrez Rodarte, 
 ## Screenshot
 
 ![homepage](./public/images/homepage%20screenshot.png)
+
+![SQL-Tables](./public/images/SQL-Tables.png)
+
+## Links
+
+[Github Repo](https://github.com/miamauro/discovering-denver)
+
+[Presentation]()
