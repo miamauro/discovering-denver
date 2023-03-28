@@ -2,14 +2,14 @@
   class="container-fluid category-header text-start text-light bg-primary d-flex flex-wrap justify-content-center align-items-center p-0 mb-5"
 >
   <img
-    class="img-fluid position-relative"
+    class="img-fluid position-relative img-category"
     src="/images/headers/category-{{locations.0.category.name}}-header.jpg"
   />
   <div
     class="d-flex category-text justify-content-start align-items-start col-8 pt-5"
   >
     <div
-      class="d-flex flex-column justify-content-start align-items-start col-6"
+      class="d-flex flex-column justify-content-start align-items-start col-10 col-md-6"
     >
       <h2>
         {{locations.0.category.name}}
@@ -44,6 +44,7 @@
           class="card-body d-flex flex-column align-items-stretch justify-content-between"
         >
           <h5 class="card-title text-center">{{location.name}}</h5>
+          <h5 class="ms-2 mb-0">{{averageReview}}</h5>
           <h6 class="text-center">{{location.address}}</h6>
           <p class="card-text text-center">{{location.description}}</p>
           <a
@@ -55,4 +56,3 @@
     {{/each}}
   </div>
 </div>
-
